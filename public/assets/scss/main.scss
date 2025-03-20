@@ -1,0 +1,69 @@
+@forward "../css/custom-animation.css";
+@forward "../css/flaticon_travel-and-tour.css";
+@forward "../css/font-awesome-pro.css";
+@forward "../css/spacing.css";
+@forward "components/theme";
+@forward "components/spacing";
+@forward "components/buttons";
+@forward "components/animation";
+@forward "components/preloader";
+@forward "components/background";
+@forward "components/offcanvas";
+@forward "components/breadcrumb";
+@forward "components/nice-select";
+@forward "components/accordion";
+@forward "components/search";
+@forward "components/section-title";
+@forward "layout/header";
+@forward "layout/menu";
+@forward "layout/slider";
+@forward "layout/destination";
+@forward "layout/about";
+@forward "layout/featured";
+@forward "layout/video";
+@forward "layout/funfact";
+@forward "layout/chooseus";
+@forward "layout/compare";
+@forward "layout/offer";
+@forward "layout/testimonial";
+@forward "layout/shop";
+@forward "layout/blog";
+@forward "layout/work";
+@forward "layout/newsletter.scss";
+@forward "layout/categories";
+@forward "layout/coverage";
+@forward "layout/stories";
+@forward "layout/instagram";
+@forward "layout/team";
+@forward "layout/portfolio";
+@forward "layout/events";
+@forward "layout/cart.scss";
+@forward "layout/checkout";
+@forward "layout/discover";
+@forward "layout/recent-post";
+@forward "layout/sidebar";
+@forward "layout/postbox";
+@forward "layout/error";
+@forward "layout/contact";
+@forward "layout/footer";
+@forward "layout/booking";
+
+.horizontal-scroll-container {
+  display: flex;
+  gap: 10px;
+  position: relative;
+  overflow-x: auto;
+  white-space: nowrap;
+  border-radius: 5px;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE & Edge */
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.scroll-item {
+  flex: 0 0 auto;
+  padding: 10px 20px;
+}
