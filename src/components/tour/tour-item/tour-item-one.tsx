@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { ITourDT } from '@/types/tour-packages-d-t';
-import { updatePrice } from '@/utils/helper';
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { IServiceDT } from "@/types/tour-packages-d-t";
+import { updatePrice } from "@/utils/helper";
 
 interface TourItemProps {
-  tour: ITourDT;
+  tour: IServiceDT;
 }
 
 const TourItemOne = ({ tour }: TourItemProps) => {
@@ -20,7 +20,7 @@ const TourItemOne = ({ tour }: TourItemProps) => {
           alt={tour.title}
           width={370}
           height={250}
-          style={{ height: 'auto' }}
+          style={{ height: "auto" }}
         />
       </div>
       <div className="it-featured-top d-flex align-items-center">
@@ -42,7 +42,7 @@ const TourItemOne = ({ tour }: TourItemProps) => {
               <span>
                 <i
                   className={
-                    isInLove ? 'fa-solid fa-heart' : 'fa-light fa-heart'
+                    isInLove ? "fa-solid fa-heart" : "fa-light fa-heart"
                   }
                 ></i>
               </span>
@@ -68,7 +68,7 @@ const TourItemOne = ({ tour }: TourItemProps) => {
           <div className="it-featured-price d-flex align-items-center">
             <i className="fa-regular fa-circle-dollar"></i>
             <p>
-              From <span>${Math.round(updatePrice(tour)).toFixed(2)}</span>{' '}
+              From <span>${Math.round(updatePrice(tour)).toFixed(2)}</span>{" "}
               {tour.badgeTitle && <del>${tour.price.toFixed(2)}</del>}
             </p>
           </div>

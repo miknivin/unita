@@ -1,13 +1,13 @@
-import Breadcrumb from '@/components/breadcrumb/breadcrumb';
-import Newsletter from '@/components/newsletter/newsletter';
-import TourDetailsArea from '@/components/tour/details/tour-details-area';
-import FooterOne from '@/layouts/footers/footer-one';
-import HeaderTwo from '@/layouts/headers/header-two';
-import Wrapper from '@/layouts/wrapper';
-import { ITourDT } from '@/types/tour-packages-d-t';
+import Breadcrumb from "@/components/breadcrumb/breadcrumb";
+import Newsletter from "@/components/newsletter/newsletter";
+import TourDetailsArea from "@/components/tour/details/tour-details-area";
+import FooterOne from "@/layouts/footers/footer-one";
+import HeaderTwo from "@/layouts/headers/header-two";
+import Wrapper from "@/layouts/wrapper";
+import { IServiceDT } from "@/types/tour-packages-d-t";
 
 interface TourDetailsProps {
-  tour: ITourDT;
+  tour: IServiceDT;
 }
 
 const TourDetailsMain = ({ tour }: TourDetailsProps) => {

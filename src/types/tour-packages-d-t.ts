@@ -1,6 +1,6 @@
-import { StaticImageData } from 'next/image';
+import { StaticImageData } from "next/image";
 
-export interface ITourDT {
+export interface IServiceDT {
   id: number;
   image: StaticImageData;
   title: string;
@@ -14,6 +14,7 @@ export interface ITourDT {
   travelerCount: number;
   detailsImg: StaticImageData;
   description?: string;
+  shortDescription?: string;
   progresses: {
     title: string;
     value: string;

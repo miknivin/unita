@@ -1,33 +1,33 @@
-import Counter from './counter-item/counter-item';
+import Counter from "./counter-item/counter-item";
 
 const counterData = [
   {
     id: 1,
-    countIcon: 'flaticon-journey',
+    countIcon: "flaticon-journey",
     countNum: 835,
-    countSubtext: '+',
-    countTitle: 'Happy Traveler',
+    countSubtext: "+",
+    countTitle: "Happy Customers",
   },
-  {
-    id: 2,
-    countIcon: 'flaticon-camping',
-    countNum: 70,
-    countSubtext: 'K',
-    countTitle: 'Tent Sites',
-  },
+  // {
+  //   id: 2,
+  //   countIcon: "flaticon-camping",
+  //   countNum: 70,
+  //   countSubtext: "K",
+  //   countTitle: "Tent Sites",
+  // },
   {
     id: 3,
-    countIcon: 'flaticon-travel',
-    countNum: 78,
-    countSubtext: '%',
-    countTitle: 'Satisfaction Rate',
+    countIcon: "flaticon-travel",
+    countNum: 90,
+    countSubtext: "%",
+    countTitle: "Satisfaction Rate",
   },
   {
     id: 4,
-    countIcon: 'flaticon-luggage',
-    countNum: 7,
-    countSubtext: '+',
-    countTitle: 'Year Of Service',
+    countIcon: "flaticon-luggage",
+    countNum: 25,
+    countSubtext: "+",
+    countTitle: "Year Of Service",
   },
 ];
 

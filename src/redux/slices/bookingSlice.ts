@@ -1,9 +1,9 @@
-import { ITourDT } from '@/types/tour-packages-d-t';
-import { updatePrice } from '@/utils/helper';
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { IServiceDT } from "@/types/tour-packages-d-t";
+import { updatePrice } from "@/utils/helper";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface BookingState {
-  tour: ITourDT | null;
+  tour: IServiceDT | null;
   checkIn: string | null;
   adultTickets: number;
   kidTickets: number;
@@ -29,10 +29,10 @@ const initialState: BookingState = {
 };
 
 const bookingSlice = createSlice({
-  name: 'booking',
+  name: "booking",
   initialState,
   reducers: {
-    setTour: (state, action: PayloadAction<ITourDT>) => {
+    setTour: (state, action: PayloadAction<IServiceDT>) => {
       state.tour = action.payload;
       bookingSlice.caseReducers.calculateTotalCost(state); // Recalculate when tour is set
     },
@@ -64,7 +64,7 @@ const bookingSlice = createSlice({
       bookingSlice.caseReducers.calculateTotalCost(state); // Recalculate on toggle
     },
     calculateTotalCost: (state) => {
-      const ticketPrice = Math.round(updatePrice(state.tour as ITourDT)); // Use tour price
+      const ticketPrice = Math.round(updatePrice(state.tour as IServiceDT)); // Use tour price
       const serviceCost = 120; // Example service cost
 
       // Calculate total based on ticket counts and selected options

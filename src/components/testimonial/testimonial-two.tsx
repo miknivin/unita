@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { SwiperOptions } from 'swiper/types';
-import { Autoplay, Navigation } from 'swiper/modules';
-import { testimonialDataTwo } from '@/data/testimonial-data';
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { SwiperOptions } from "swiper/types";
+import { Autoplay, Navigation } from "swiper/modules";
+import { testimonialDataTwo } from "@/data/testimonial-data";
 
-import shapeImg1 from '@/assets/img/home-2/testimonial/shape/test-2.1.png';
-import shapeImg2 from '@/assets/img/home-2/testimonial/shape/test-2.2.png';
-import testimonialImg from '@/assets/img/home-2/testimonial/thumb/test-2-1.jpg';
+import shapeImg1 from "@/assets/img/home-2/testimonial/shape/test-2.1.png";
+import shapeImg2 from "@/assets/img/home-2/testimonial/shape/test-2.2.png";
+import testimonialImg from "@/assets/img/home-2/testimonial/thumb/test-2-1.jpg";
 
 const TestimonialTwo = () => {
   const sliderOption: SwiperOptions = {
@@ -18,15 +18,24 @@ const TestimonialTwo = () => {
     loop: true,
     autoplay: { delay: 3000 },
     navigation: {
-      prevEl: '.testi-2-prev',
-      nextEl: '.testi-2-next',
+      prevEl: ".testi-2-prev",
+      nextEl: ".testi-2-next",
     },
   };
   return (
     <div className="it-testi-2-area pt-120 pb-120 p-relative">
       <div className="it-testi-2-shape-box d-none d-md-block">
-        <div className="it-testi-2-shape-top">
-          <Image src={shapeImg1} alt="Shape Img" width={105} height={95} />
+        <div
+          style={{ transform: "rotate(15deg)" }}
+          className="it-testi-2-shape-top"
+        >
+          <Image
+            src={shapeImg1}
+            style={{ transform: "rotate(15deg)" }}
+            alt="Shape Img"
+            width={105}
+            height={95}
+          />
         </div>
       </div>
       <div className="container">
@@ -68,7 +77,7 @@ const TestimonialTwo = () => {
                     alt="Testimonial Img"
                     width={300}
                     height={400}
-                    style={{ height: 'auto' }}
+                    style={{ height: "auto" }}
                   />
                 </div>
               </div>
@@ -95,7 +104,7 @@ const TestimonialTwo = () => {
                               <h3 className="it-testi-2-avater-title mb-10">
                                 {testimonial.author}
                               </h3>
-                              <span>{testimonial.designation}</span>
+                              {/* <span>{testimonial.designation}</span> */}
                             </div>
                             <div className="it-testi-2-avater-quote">
                               <i className="fa-solid fa-quote-right"></i>

@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import TourItemThree from './tour-item/tour-item-three';
-import { tourPackagesDataTwo } from '@/data/tour-packages-data';
+import Link from "next/link";
+import TourItemThree from "./tour-item/tour-item-three";
+import { ServicesTwo } from "@/data/tour-packages-data";
 
 const TourThree = () => {
   return (
@@ -16,7 +16,7 @@ const TourThree = () => {
         </div>
         <div className="it-featured-item-wrap it-featured-style-3-space mb-30">
           <div className="row">
-            {tourPackagesDataTwo.map((tour) => (
+            {ServicesTwo.map((tour) => (
               <div
                 key={tour.id}
                 className="col-xxl-3 col-xl-4 col-lg-6 col-md-6"

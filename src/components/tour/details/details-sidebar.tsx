@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-import { RootState } from '@/redux/rootReducer';
-import { useRouter } from 'next/navigation';
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { RootState } from "@/redux/rootReducer";
+import { useRouter } from "next/navigation";
 import {
   setAdultTickets,
   setCheckIn,
@@ -17,15 +17,15 @@ import {
   toggleAdditionalGuide,
   toggleInternet,
   togglePhotography,
-} from '@/redux/slices/bookingSlice';
-import { ITourDT } from '@/types/tour-packages-d-t';
-import { tourPackagesDataThree } from '@/data/tour-packages-data';
-import { useAppDispatch, useAppSelector } from '@/hooks/redux-hooks';
-import { updatePrice } from '@/utils/helper';
-import { MinusSvg, PlusSvg } from '@/components/svg';
+} from "@/redux/slices/bookingSlice";
+import { IServiceDT } from "@/types/tour-packages-d-t";
+import { tourPackagesDataThree } from "@/data/tour-packages-data";
+import { useAppDispatch, useAppSelector } from "@/hooks/redux-hooks";
+import { updatePrice } from "@/utils/helper";
+import { MinusSvg, PlusSvg } from "@/components/svg";
 
 interface IProps {
-  tour: ITourDT;
+  tour: IServiceDT;
 }
 
 const DetailsSidebar = ({ tour }: IProps) => {
@@ -54,11 +54,11 @@ const DetailsSidebar = ({ tour }: IProps) => {
   // Dispatch the action to Navigate to booking page
   const handleProceedToBook = () => {
     if (!checkIn) {
-      alert('Please select a date before proceeding!');
+      alert("Please select a date before proceeding!");
       return;
     }
     dispatch(setIsBookingClicked());
-    router.push('/booking-page');
+    router.push("/booking-page");
   };
 
   // handler for opening date pick up after clicking
@@ -79,12 +79,12 @@ const DetailsSidebar = ({ tour }: IProps) => {
   // Service Data
   const services = [
     {
-      name: 'Additional Guide',
+      name: "Additional Guide",
       state: additionalGuide,
       action: toggleAdditionalGuide,
     },
-    { name: 'Internet', state: internet, action: toggleInternet },
-    { name: 'Photography', state: photography, action: togglePhotography },
+    { name: "Internet", state: internet, action: toggleInternet },
+    { name: "Photography", state: photography, action: togglePhotography },
   ];
 
   return (
@@ -302,7 +302,7 @@ const DetailsSidebar = ({ tour }: IProps) => {
                         alt={item.title}
                         width={90}
                         height={90}
-                        style={{ height: 'auto' }}
+                        style={{ height: "auto" }}
                       />
                     </a>
                   </div>

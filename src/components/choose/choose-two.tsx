@@ -1,26 +1,33 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
-import shapeImg1 from '@/assets/img/home-2/chooseus/shape/ballon-1.png';
-import shapeImg2 from '@/assets/img/home-2/chooseus/shape/walk-1.png';
-import shapeImg3 from '@/assets/img/home-2/chooseus/shape/star.png';
-import chooseImg1 from '@/assets/img/home-2/chooseus/thumb/choose-2-1.jpg';
-import chooseImg2 from '@/assets/img/home-2/chooseus/thumb/choose-2-2.jpg';
+import shapeImg1 from "@/assets/img/home-2/chooseus/shape/ballon-1.png";
+import shapeImg2 from "@/assets/img/home-2/chooseus/shape/walk-1.png";
+import shapeImg3 from "@/assets/img/home-2/chooseus/shape/star.png";
+import chooseImg1 from "@/assets/img/home-2/chooseus/thumb/choose-2-1.jpg";
+import chooseImg2 from "@/assets/img/home-2/chooseus/thumb/choose-2-2.jpg";
 
 const chooseData = [
   {
     id: 1,
-    icon: 'flaticon-tour-guide',
-    title: 'Completed Training Guide',
+    icon: "fa-solid fa-check-to-slot",
+    title: "Travel & Visa Solutions",
     description:
-      '   Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit, sed do.',
+      "  Tailored tour packages for individuals, families, and groups across GCC, America & Europe, along with expert visa assistance for seamless approvals.",
   },
   {
     id: 2,
-    icon: 'flaticon-travel',
-    title: 'World Insurance Included',
+    icon: "fa-solid fa-check-to-slot",
+    title: "Global Job & Recruitment Services",
     description:
-      '   Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit, sed do.',
+      "Connecting professionals and skilled workers with top opportunities worldwide while offering efficient HR & recruitment solutions for businesses.",
+  },
+  {
+    id: 2,
+    icon: "fa-solid fa-check-to-slot",
+    title: "Flight Ticketing & Travel Support",
+    description:
+      "Affordable, hassle-free flight bookings and comprehensive travel assistance to make your journey smooth and stress-free.",
   },
 ];
 
@@ -51,7 +58,7 @@ const ChooseTwo = () => {
                       alt="Choose Img"
                       width={270}
                       height={500}
-                      style={{ height: 'auto' }}
+                      style={{ height: "auto" }}
                     />
                     <div className="it-chooseus-2-star">
                       <Image
@@ -59,7 +66,7 @@ const ChooseTwo = () => {
                         alt="Shape Img"
                         width={70}
                         height={72}
-                        style={{ height: 'auto' }}
+                        style={{ height: "auto" }}
                       />
                     </div>
                   </div>
@@ -71,7 +78,7 @@ const ChooseTwo = () => {
                       alt="Choose Img"
                       width={300}
                       height={556}
-                      style={{ height: 'auto' }}
+                      style={{ height: "auto" }}
                     />
                   </div>
                 </div>
@@ -87,7 +94,7 @@ const ChooseTwo = () => {
               <div className="it-about-title-box mb-30">
                 <span className="it-section-subtitle">What we do</span>
                 <h3 className="it-section-title mb-20">
-                  Best Overworld Travel Guide Agency Services
+                  Your Trusted Travel & Recruitment Partner
                 </h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed

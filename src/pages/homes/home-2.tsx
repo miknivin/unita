@@ -1,17 +1,17 @@
-import AboutTwo from '@/components/about/about-two';
-import BlogTwo from '@/components/blog/blog-two';
-import ChooseTwo from '@/components/choose/choose-two';
-import DestinationTwo from '@/components/destination/destination-two';
-import FunFactTwo from '@/components/funfact/funfact-two';
-import HeroBannerTwo from '@/components/hero-banner/hero-banner-two';
-import Newsletter from '@/components/newsletter/newsletter';
-import ShopTwo from '@/components/shop/shop-two';
-import TestimonialTwo from '@/components/testimonial/testimonial-two';
-import TourTwo from '@/components/tour/tour-two';
-import WorkOne from '@/components/work/work-one';
-import FooterOne from '@/layouts/footers/footer-one';
-import HeaderTwo from '@/layouts/headers/header-two';
-import Wrapper from '@/layouts/wrapper';
+import AboutTwo from "@/components/about/about-two";
+import BlogTwo from "@/components/blog/blog-two";
+import ChooseTwo from "@/components/choose/choose-two";
+import DestinationTwo from "@/components/destination/destination-two";
+import FunFactTwo from "@/components/funfact/funfact-two";
+import HeroBannerTwo from "@/components/hero-banner/hero-banner-two";
+import Newsletter from "@/components/newsletter/newsletter";
+import ShopTwo from "@/components/shop/shop-two";
+import TestimonialTwo from "@/components/testimonial/testimonial-two";
+import TourTwo from "@/components/tour/tour-two";
+import WorkOne from "@/components/work/work-one";
+import FooterOne from "@/layouts/footers/footer-one";
+import HeaderTwo from "@/layouts/headers/header-two";
+import Wrapper from "@/layouts/wrapper";
 
 const HomeTwoMain = () => {
   return (
@@ -23,11 +23,11 @@ const HomeTwoMain = () => {
 
         <AboutTwo />
 
-        <DestinationTwo />
+        {/* <DestinationTwo /> */}
 
         <TourTwo />
 
-        <WorkOne />
+        {/* <WorkOne /> */}
 
         <TestimonialTwo />
 
@@ -35,9 +35,9 @@ const HomeTwoMain = () => {
 
         <ChooseTwo />
 
-        <ShopTwo />
+        {/* <ShopTwo />
 
-        <BlogTwo />
+        <BlogTwo /> */}
 
         <Newsletter />
       </main>

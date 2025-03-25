@@ -1,12 +1,12 @@
-import Image from 'next/image';
-import TourDetailsFaq from '@/components/tour/details/tour-details-faq';
-import TourDetailsReview from './tour-details-review';
-import ReviewBox from './review-box';
-import { tourPackagesDataThree } from '@/data/tour-packages-data';
-import TourItemFour from '../tour-item/tour-item-four';
-import DetailsSidebar from './details-sidebar';
-import { ITourDT } from '@/types/tour-packages-d-t';
-import { updatePrice } from '@/utils/helper';
+import Image from "next/image";
+import TourDetailsFaq from "@/components/tour/details/tour-details-faq";
+import TourDetailsReview from "./tour-details-review";
+import ReviewBox from "./review-box";
+import { tourPackagesDataThree } from "@/data/tour-packages-data";
+import TourItemFour from "../tour-item/tour-item-four";
+import DetailsSidebar from "./details-sidebar";
+import { IServiceDT } from "@/types/tour-packages-d-t";
+import { updatePrice } from "@/utils/helper";
 import {
   AirplaneSvg,
   CarSvg,
@@ -18,12 +18,12 @@ import {
   SettingsSvg,
   StarSvgTwo,
   WiFiSvg,
-} from '@/components/svg';
+} from "@/components/svg";
 
-import detailsImg1 from '@/assets/img/inner-page/discover/discover-2.jpg';
+import detailsImg1 from "@/assets/img/inner-page/discover/discover-2.jpg";
 
 interface TourDetailsProps {
-  tour: ITourDT;
+  tour: IServiceDT;
 }
 
 const TourDetailsArea = ({ tour }: TourDetailsProps) => {
@@ -111,7 +111,7 @@ const TourDetailsArea = ({ tour }: TourDetailsProps) => {
                       </li>
                       <li>
                         <a href="#">
-                          <i className="fa-sharp fa-solid fa-heart"></i>{' '}
+                          <i className="fa-sharp fa-solid fa-heart"></i>{" "}
                           WISHLIST
                         </a>
                       </li>
@@ -126,7 +126,7 @@ const TourDetailsArea = ({ tour }: TourDetailsProps) => {
                 alt=""
                 width={770}
                 height={451}
-                style={{ height: 'auto' }}
+                style={{ height: "auto" }}
               />
             </div>
             <div className="it-discover-dsc mb-45">
@@ -142,7 +142,7 @@ const TourDetailsArea = ({ tour }: TourDetailsProps) => {
                       alt="Details Img"
                       width={370}
                       height={450}
-                      style={{ height: 'auto' }}
+                      style={{ height: "auto" }}
                     />
                   </div>
                 </div>
@@ -292,7 +292,7 @@ const TourDetailsArea = ({ tour }: TourDetailsProps) => {
             <div className="it-discover-maps mb-35">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d121914.86196405679!2d-74.07886878452959!3d40.72084424392851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1713501285528!5m2!1sen!2sbd"
-                style={{ border: '0' }}
+                style={{ border: "0" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

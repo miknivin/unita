@@ -1,12 +1,12 @@
-import { IProductDT } from '@/types/product-d-t';
-import { ITourDT } from '@/types/tour-packages-d-t';
+import { IProductDT } from "@/types/product-d-t";
+import { IServiceDT } from "@/types/tour-packages-d-t";
 
 // Define CartItem type (union of IProductDT or IProgramDT with quantity)
 export type CartItem = IProductDT & { quantity: number };
 
 // Function to update price based on badge title
-export const updatePrice = (product: ITourDT | IProductDT): number => {
-  const price = product?.badgeTitle?.includes('%')
+export const updatePrice = (product: IServiceDT | IProductDT): number => {
+  const price = product?.badgeTitle?.includes("%")
     ? (product?.price * (1 - parseFloat(product?.badgeTitle) / 100)).toFixed(2)
     : product?.price;
 

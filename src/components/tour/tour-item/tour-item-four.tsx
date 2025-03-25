@@ -1,10 +1,10 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { ITourDT } from '@/types/tour-packages-d-t';
-import { updatePrice } from '@/utils/helper';
+import Image from "next/image";
+import Link from "next/link";
+import { IServiceDT } from "@/types/tour-packages-d-t";
+import { updatePrice } from "@/utils/helper";
 
 interface TourItemProps {
-  tour: ITourDT;
+  tour: IServiceDT;
 }
 
 const TourItemFour = ({ tour }: TourItemProps) => {
@@ -16,7 +16,7 @@ const TourItemFour = ({ tour }: TourItemProps) => {
           alt={tour.title}
           width={370}
           height={250}
-          style={{ height: 'auto' }}
+          style={{ height: "auto" }}
         />
         <div className="it-featured-content">
           <div className="it-featured-meta mb-5">
@@ -31,7 +31,7 @@ const TourItemFour = ({ tour }: TourItemProps) => {
             <div className="it-featured-price d-flex align-items-center">
               <i className="fa-regular fa-circle-dollar"></i>
               <p>
-                From <span>${Math.round(updatePrice(tour)).toFixed(2)}</span>{' '}
+                From <span>${Math.round(updatePrice(tour)).toFixed(2)}</span>{" "}
                 {tour.badgeTitle && <del>${tour.price.toFixed(2)}</del>}
               </p>
             </div>
