@@ -59,7 +59,7 @@ const MenuItems = ({ isMobileMenu }: IProps) => {
   return (
     <ul>
       <li className="p-static">
-        <Link href="#">
+        <Link href="/">
           Home
           {/* <button
             className={`${

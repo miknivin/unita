@@ -1,46 +1,60 @@
-import Image from 'next/image';
+import Image from "next/image";
 import {
   ChooseSvg1,
   ChooseSvg2,
   ChooseSvg3,
   ChooseSvg4,
   ChooseSvg5,
-} from '../svg';
+} from "../svg";
 
-import shapeImg from '@/assets/img/inner-page/chooseuse/inn-chooseus-shape.jpg';
-import chooseImg from '@/assets/img/inner-page/chooseuse/inn-chooseus1.jpg';
+import shapeImg from "@/assets/img/inner-page/chooseuse/inn-chooseus-shape.jpg";
+import chooseImg from "@/assets/img/inner-page/chooseuse/inn-chooseus1.jpg";
 
 const chooseData = [
   [
     {
       id: 1,
       icon: <ChooseSvg1 />,
-      title: 'Amazing Tour Plans',
+      title: "Travel & Tour Packages",
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do..',
+        "We offer carefully curated travel experiences, from adventure trips to luxury vacations, ensuring unforgettable journeys.",
     },
     {
       id: 2,
       icon: <ChooseSvg2 />,
-      title: 'Best Travel Guide',
+      title: "Worldwide Visa Consultancy/Assistance",
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do..',
+        "Our experts provide seamless visa processing and guidance, making international travel hassle-free.",
+    },
+    {
+      id: 5,
+      icon: <ChooseSvg3 />,
+      title: "Job Placements Worldwide",
+      description:
+        "We assist professionals in securing job opportunities across various industries in global markets.",
     },
   ],
   [
     {
       id: 3,
       icon: <ChooseSvg3 />,
-      title: 'Easy Booking Options',
+      title: "Worldwide Flight Ticketing",
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do..',
+        "We help travelers book the best flight deals worldwide, ensuring convenience and cost-effectiveness.",
     },
     {
       id: 4,
       icon: <ChooseSvg4 />,
-      title: 'World Insurance Included',
+      title: "Recruitment Consultancy",
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do..',
+        "We connect businesses with top talent, providing expert recruitment strategies tailored to industry needs.",
+    },
+    {
+      id: 6,
+      icon: <ChooseSvg4 />,
+      title: "HR Solutions",
+      description:
+        "Our HR services support businesses with workforce planning, talent management, and streamlined hiring processes.",
     },
   ],
 ];
@@ -63,14 +77,15 @@ const ChooseSeven = () => {
           <div className="col-xl-7 col-lg-7">
             <div className="it-about-content p-relative">
               <div className="it-chooseus-title-box mb-30">
-                <span className="it-section-subtitle">What we do</span>
-                <h3 className="it-section-title mb-20">
-                  We Arrange the Best Tour <br />
-                  Ever Possible.
-                </h3>
+                {/* <span className="it-section-subtitle">What we do</span> */}
+                <h3 className="it-section-title mb-20">What we do</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  We provide comprehensive solutions in travel, recruitment, and
+                  human resources, ensuring seamless experiences for both
+                  individuals and businesses. From organizing unforgettable
+                  trips to connecting talent with global opportunities, our
+                  expertise allows us to cater to diverse needs with
+                  professionalism and efficiency.
                 </p>
               </div>
               <div className="row">
@@ -108,7 +123,7 @@ const ChooseSeven = () => {
                   alt="Choose Img"
                   width={581}
                   height={700}
-                  style={{ height: 'auto' }}
+                  style={{ height: "auto" }}
                 />
               </div>
             </div>
