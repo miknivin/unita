@@ -19,7 +19,7 @@ const ServicesDetailsMain = ({ service }: Service) => {
         <Breadcrumb title={service?.title} subtitle="Tour" />
 
         <ServicesDetailsArea service={service} />
-        {service.id === 6 && <EventGridArea />}
+        {(service&&service.id === 6) && <EventGridArea />}
         <Newsletter itemClass="it-newsletter-area it-newsletter-height fix p-relative theme-bg" />
       </main>
       <FooterOne />

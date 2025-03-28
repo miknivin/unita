@@ -27,7 +27,7 @@ const TourList = () => {
           <div className="row">
             {currentTours.map((tour) => (
               <div key={tour.id} className="col-xl-4 col-lg-6 col-md-6">
-                <ServiceItemFour tour={tour} />
+                <ServiceItemFour service={tour} />
               </div>
             ))}
           </div>

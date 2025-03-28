@@ -30,7 +30,7 @@ const TourFour = () => {
                     data-aos="fade-up"
                     data-aos-duration="1200"
                   >
-                    <ServiceItemFour tour={tour} />
+                    <ServiceItemFour service={tour} />
                   </div>
                 ))
                 .slice(0, 6)}

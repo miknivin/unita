@@ -77,7 +77,7 @@ const TourFive = () => {
                   {servicesDataThree
                     .map((tour) => (
                       <SwiperSlide key={tour.id} className="swiper-slide">
-                        <ServiceItemFour tour={tour} />
+                        <ServiceItemFour service={tour} />
                       </SwiperSlide>
                     ))
                     .slice(0, 5)}

@@ -11,12 +11,12 @@ export default function ServiceDetailsPage({
 }: {
   params: { id: string };
 }) {
-  const service = ServicesData.find((tour) => tour.id === Number(params.id));
+  const service = ServicesData.find((tour) => tour.id === Number(params?.id));
   return service ? (
     <ServicesDetailsMain service={service} />
   ) : (
     <div className="text-center pt-100">
-      Tour not found with id: {params.id}
+      Tour not found with id: {params?.id}
     </div>
   );
 }
