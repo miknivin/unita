@@ -3,7 +3,7 @@ import { eventData } from "@/data/event-data";
 import EventDetailsMain from "@/pages/event-details/event-details";
 
 export const metadata: Metadata = {
-  title: "UNITA - Event Details Page",
+  title: "UNITAG - Event Details Page",
 };
 
 export default function EventDetailsPage({

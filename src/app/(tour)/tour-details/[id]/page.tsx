@@ -3,7 +3,7 @@ import { ServicesData } from "@/data/tour-packages-data";
 import ServicesDetailsMain from "@/pages/tour-details/tour-details";
 
 export const metadata: Metadata = {
-  title: "UNITA - Tour Details Page",
+  title: "UNITAG - Tour Details Page",
 };
 
 export default function ServiceDetailsPage({

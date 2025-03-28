@@ -4,8 +4,8 @@ import Link from "next/link";
 import shapeImg1 from "@/assets/img/home-2/chooseus/shape/ballon-1.png";
 import shapeImg2 from "@/assets/img/home-2/chooseus/shape/walk-1.png";
 import shapeImg3 from "@/assets/img/home-2/chooseus/shape/star.png";
-import chooseImg1 from "@/assets/img/home-2/chooseus/thumb/choose-2-1.jpg";
-import chooseImg2 from "@/assets/img/home-2/chooseus/thumb/choose-2-2.jpg";
+import chooseImg1 from "@/assets/img/home-2/chooseus/thumb/choose-2-1.webp";
+import chooseImg2 from "@/assets/img/home-2/chooseus/thumb/choose-2-2.webp";
 
 const chooseData = [
   {
@@ -35,12 +35,12 @@ const ChooseTwo = () => {
   return (
     <div className="it-about-area it-chooseus-2 pt-120 pb-120 p-relative">
       <div className="it-chooseus-2-shape-box">
-        <div className="it-chooseus-2-shape-1 d-none d-xxl-block">
+        {/* <div className="it-chooseus-2-shape-1 d-none d-xxl-block">
           <Image src={shapeImg1} alt="Shape Img" width={139} height={191} />
         </div>
         <div className="it-chooseus-2-shape-2 d-none d-xxl-block">
           <Image src={shapeImg2} alt="Shape Img" width={320} height={257} />
-        </div>
+        </div> */}
       </div>
       <div className="container">
         <div className="row align-items-center">
@@ -58,9 +58,9 @@ const ChooseTwo = () => {
                       alt="Choose Img"
                       width={270}
                       height={500}
-                      style={{ height: "auto" }}
+                      style={{ objectFit: "cover" }}
                     />
-                    <div className="it-chooseus-2-star">
+                    {/* <div className="it-chooseus-2-star">
                       <Image
                         src={shapeImg3}
                         alt="Shape Img"
@@ -68,7 +68,7 @@ const ChooseTwo = () => {
                         height={72}
                         style={{ height: "auto" }}
                       />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
@@ -78,7 +78,7 @@ const ChooseTwo = () => {
                       alt="Choose Img"
                       width={300}
                       height={556}
-                      style={{ height: "auto" }}
+                      style={{ objectFit: "cover" }}
                     />
                   </div>
                 </div>
@@ -97,9 +97,11 @@ const ChooseTwo = () => {
                   Your Trusted Travel & Recruitment Partner
                 </h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam.
+                  Whether you're planning your next adventure or seeking the
+                  perfect job opportunity, we are here to make the process
+                  seamless and stress-free. With expert travel services and
+                  top-notch recruitment solutions, we connect you to experiences
+                  and careers that match your aspirations.
                 </p>
               </div>
               {chooseData.map((choose) => (

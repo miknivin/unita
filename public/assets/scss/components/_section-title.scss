@@ -1,4 +1,4 @@
-@use '../utils' as *;
+@use "../utils" as *;
 
 .it-section {
   &-subtitle {
@@ -7,7 +7,7 @@
     text-transform: capitalize;
     display: inline-block;
     color: var(--it-theme-2);
-    font-family: var(--it-ff-gloss);
+    font-family: var(--it-ff-primary);
     margin-bottom: 15px;
 
     &.subtitle-green {

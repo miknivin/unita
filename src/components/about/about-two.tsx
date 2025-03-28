@@ -4,7 +4,7 @@ import Counter from "../funfact/counter-item/counter-item";
 
 import shapeImg1 from "@/assets/img/home-2/about/shape/Ballon-1.png";
 import shapeImg2 from "@/assets/img/home-2/about/shape/star.png";
-import aboutBigImg from "@/assets/img/home-2/about/img/big-thumb.png";
+import aboutBigImg from "@/assets/img/home-2/about/img/big-thumb.webp";
 import aboutSmImg from "@/assets/img/home-2/about/img/small-thumb.png";
 
 const AboutTwo = () => {
@@ -86,7 +86,7 @@ const AboutTwo = () => {
                   alt="About Img"
                   width={470}
                   height={676}
-                  style={{ height: "auto" }}
+                  style={{ objectFit: "cover" }}
                 />
 
                 <div
@@ -98,7 +98,7 @@ const AboutTwo = () => {
                   <h3 className="it-about-experience-title">
                     <Counter
                       start={0}
-                      end={25}
+                      end={7}
                       duration={3}
                       counterSubText="+"
                     />
@@ -108,7 +108,7 @@ const AboutTwo = () => {
                     of experience in services
                   </span>
                 </div>
-                <div className="it-about-sub-thumb d-none d-md-block">
+                {/* <div className="it-about-sub-thumb d-none d-md-block">
                   <Image
                     src={aboutSmImg}
                     alt="About Img"
@@ -116,7 +116,7 @@ const AboutTwo = () => {
                     height={300}
                     style={{ height: "auto" }}
                   />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

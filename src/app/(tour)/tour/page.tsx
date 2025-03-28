@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import TourMain from "@/pages/tour/tour";
 
 export const metadata: Metadata = {
-  title: "UNITA - Tour Page",
+  title: "UNITAG - Tour Page",
 };
 
 const TourPage = () => {

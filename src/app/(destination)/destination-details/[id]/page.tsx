@@ -3,7 +3,7 @@ import { destinationData } from "@/data/destination-data";
 import DestinationDetailsMain from "@/pages/destination-details/destination-details";
 
 export const metadata: Metadata = {
-  title: "UNITA - Destination Details Page",
+  title: "UNITAG - Destination Details Page",
 };
 
 export default function destinationDetailsPage({

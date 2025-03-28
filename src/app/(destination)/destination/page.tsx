@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import DestinationMain from "@/pages/destination/destination";
 
 export const metadata: Metadata = {
-  title: "UNITA - Destination Page",
+  title: "UNITAG - Destination Page",
 };
 
 const DestinationPage = () => {

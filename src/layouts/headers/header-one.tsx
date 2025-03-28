@@ -64,7 +64,7 @@ const HeaderOne = ({ hasTopBar, hasTopBarTwo, headerClass }: HeaderProps) => {
                 <div className="col-xl-2 col-lg-6 col-md-6 col-6">
                   <div className="it-main-logo">
                     <Link href="/">
-                      <Image src={Logo} alt="UNITA" width={129} height={40} />
+                      <Image src={Logo} alt="UNITAG" width={129} height={40} />
                     </Link>
                   </div>
                 </div>

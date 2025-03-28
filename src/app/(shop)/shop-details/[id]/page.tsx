@@ -3,7 +3,7 @@ import { productData } from "@/data/product-data";
 import ShopDetailsMain from "@/pages/shop-details/shop-details";
 
 export const metadata: Metadata = {
-  title: "UNITA - Shop Details Page",
+  title: "UNITAG - Shop Details Page",
 };
 
 export default function ShopDetailsPage({

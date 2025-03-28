@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 interface BreadcrumbProps {
   title: string;
@@ -10,7 +10,7 @@ const Breadcrumb = ({ title, subtitle }: BreadcrumbProps) => {
     <div
       className="it-breadcrumb-area it-breadcrumb-bg"
       style={{
-        backgroundImage: `url('/assets/img/breadcrumb/breadcrumb.jpg')`,
+        backgroundImage: `url('/assets/img/breadcrumb/breadcrump.webp')`,
       }}
     >
       <div className="container">
@@ -24,8 +24,8 @@ const Breadcrumb = ({ title, subtitle }: BreadcrumbProps) => {
                 <div className="it-breadcrumb-list-content">
                   <span>
                     <Link href="/">home</Link>
-                  </span>{' '}
-                  <span className="dvdr">&#47;&#47;</span>{' '}
+                  </span>{" "}
+                  <span className="dvdr">&#47;&#47;</span>{" "}
                   <span>{subtitle ? subtitle : title}</span>
                 </div>
               </div>

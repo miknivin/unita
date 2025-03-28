@@ -24,7 +24,7 @@ const SearchPopUp = ({ isPopUpOpen, setIsPopUpOpen }: SearchProps) => {
                   <Link href="/">
                     <Image
                       src={LogoWhite}
-                      alt="UNITA"
+                      alt="UNITAG"
                       width={129}
                       height={40}
                     />

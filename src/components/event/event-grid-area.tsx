@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { eventDataOne } from '@/data/event-data';
-import ReactPaginate from 'react-paginate';
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { eventDataOne } from "@/data/event-data";
+import ReactPaginate from "react-paginate";
 
 const EventGridArea = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -29,9 +29,7 @@ const EventGridArea = () => {
             <div key={event.id} className="col-xl-4 col-lg-4 col-md-6">
               <div className="it-events-item">
                 <div className="it-events-date-box d-flex align-items-center justify-content-center">
-                  <span className="it-events-date">{event.eventDate}</span>
-                  <h5 className="it-events-month">{event.eventMonth}</h5>
-                  <span className="it-events-time">{event.eventTime}</span>
+                  <span className="it-events-date">{event?.companyName}</span>
                 </div>
                 <div className="it-events-thumb fix">
                   <Image
@@ -39,7 +37,7 @@ const EventGridArea = () => {
                     alt={event.title}
                     width={370}
                     height={212}
-                    style={{ height: 'auto' }}
+                    style={{ height: "auto" }}
                   />
                 </div>
                 <div className="it-events-content">
@@ -52,9 +50,12 @@ const EventGridArea = () => {
                     </span>
                   </div>
                   <h3 className="it-events-title">
-                    <Link href={`/event-details/${event.id}`}>
+                    {/* <Link href={`/event-details/${event.id}`}>
                       {event.title}
-                    </Link>
+                    </Link> */}
+                    <button >
+                      {event.title}
+                    </button>
                   </h3>
                   <p>{event.description}</p>
                 </div>

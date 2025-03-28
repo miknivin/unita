@@ -4,6 +4,7 @@ export interface IEventDT {
   id: number;
   title: string;
   image: StaticImageData;
+  companyName?:string;
   description: string;
   detailsImage: StaticImageData;
   eventTime: string;

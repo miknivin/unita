@@ -1,4 +1,5 @@
 import Breadcrumb from "@/components/breadcrumb/breadcrumb";
+import EventGridArea from "@/components/event/event-grid-area";
 import Newsletter from "@/components/newsletter/newsletter";
 import ServicesDetailsArea from "@/components/tour/details/tour-details-area";
 import FooterOne from "@/layouts/footers/footer-one";
@@ -18,7 +19,7 @@ const ServicesDetailsMain = ({ service }: Service) => {
         <Breadcrumb title={service?.title} subtitle="Tour" />
 
         <ServicesDetailsArea service={service} />
-
+        {service.id === 6 && <EventGridArea />}
         <Newsletter itemClass="it-newsletter-area it-newsletter-height fix p-relative theme-bg" />
       </main>
       <FooterOne />

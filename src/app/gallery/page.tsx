@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import GalleryMain from "@/pages/galley/gallery";
 
 export const metadata: Metadata = {
-  title: "UNITA - Gallery Page",
+  title: "UNITAG - Gallery Page",
 };
 
 const GalleryPage = () => {

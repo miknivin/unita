@@ -250,7 +250,7 @@ export const ServicesTwo: IServiceDT[] = [
   },
   {
     id: 6,
-    image: packageImg6,
+    image: detailsImg5,
     title: "Recruitment & HR Solutions",
     isFeature: true,
     price: 99,

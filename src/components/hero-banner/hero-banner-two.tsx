@@ -16,8 +16,8 @@ const HeroBannerTwo = () => {
               <div className="it-slider-2-text" style={{ overflowX: "hidden" }}>
                 <h3
                   className="it-slider-title mb-20 text-center"
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
+                  // data-aos="fade-up"
+                  // data-aos-duration="1000"
                 >
                   One Agency, <br /> Endless Possibilities
                 </h3>

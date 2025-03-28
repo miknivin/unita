@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import ShopMain from "@/pages/shop/shop";
 
 export const metadata: Metadata = {
-  title: "UNITA - Shop Page",
+  title: "UNITAG - Shop Page",
 };
 
 const ShopPage = () => {

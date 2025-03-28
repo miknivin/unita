@@ -53,17 +53,21 @@ const FooterOne = ({
                   <Link href="/">
                     <Image
                       src={footerLogo ? footerLogo : Logo}
-                      alt="UNITA"
+                      alt="UNITAG"
+                      style={{
+                        backgroundColor: "#fff",
+                        padding: "8px",
+                        borderRadius: "10px",
+                      }}
                       width={129}
-                      height={40}
+                      height={129}
                     />
                   </Link>
                 </div>
                 <div className="it-footer-content">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    doeiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    Bringing your vision to life with quality, efficiency, and
+                    expertise.
                   </p>
                   <div className="it-footer-social">
                     <a href="#">
@@ -88,19 +92,19 @@ const FooterOne = ({
                 <div className="it-footer-list">
                   <ul>
                     <li>
-                      <a href="#">Home</a>
+                      <Link href="/">Home</Link>
                     </li>
                     <li>
-                      <a href="#">About us</a>
+                      <Link href={"/about"}>About us</Link>
                     </li>
-                    <li>
+                    {/* <li>
                       <a href="#">Blog update</a>
-                    </li>
+                    </li> */}
+                    {/* <li>
+                      <Link href={"/"}>Our services</Li>
+                    </li> */}
                     <li>
-                      <a href="#">Our services</a>
-                    </li>
-                    <li>
-                      <a href="#">Testimonial</a>
+                      <Link href={"/contact"}>Contact us</Link>
                     </li>
                   </ul>
                 </div>
@@ -120,9 +124,9 @@ const FooterOne = ({
                     <li>
                       <a href="#">FAQ</a>
                     </li>
-                    <li>
+                    {/* <li>
                       <a href="#">Hydropower Plants</a>
-                    </li>
+                    </li> */}
                     <li>
                       <a href="#">Customer support</a>
                     </li>
@@ -167,7 +171,7 @@ const FooterOne = ({
                   <p>
                     Copyright © 2024{" "}
                     <span>
-                      <a href="#">UNITA</a>
+                      <a href="#">UNITAG</a>
                     </span>{" "}
                     All Right Reserved
                   </p>

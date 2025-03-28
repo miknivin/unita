@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import WishlistMain from "@/pages/wishlist/wishlist";
 
 export const metadata: Metadata = {
-  title: "UNITA - Wishlist Page",
+  title: "UNITAG - Wishlist Page",
 };
 
 const WishlistPage = () => {

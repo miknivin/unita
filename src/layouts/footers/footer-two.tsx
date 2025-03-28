@@ -33,7 +33,7 @@ const FooterTwo = () => {
               <div className="it-footer-widget footer-col-1 mb-60">
                 <div className="it-footer-logo mb-35">
                   <Link href="/">
-                    <Image src={Logo} alt="UNITA" width={129} height={40} />
+                    <Image src={Logo} alt="UNITAG" width={129} height={40} />
                   </Link>
                 </div>
                 <div className="it-footer-content">
@@ -154,7 +154,7 @@ const FooterTwo = () => {
                   <p>
                     Copyright © 2024{" "}
                     <span>
-                      <a href="">UNITA</a>
+                      <a href="">UNITAG</a>
                     </span>{" "}
                     All Right Reserved
                   </p>
