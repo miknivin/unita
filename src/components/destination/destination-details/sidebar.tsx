@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { tourPackagesDataThree } from '@/data/tour-packages-data';
-import { updatePrice } from '@/utils/helper';
+import Image from "next/image";
+import Link from "next/link";
+import { servicesDataThree } from "@/data/tour-packages-data";
+import { updatePrice } from "@/utils/helper";
 
 const Sidebar = () => {
   return (
@@ -59,7 +59,7 @@ const Sidebar = () => {
       <div className="it-discover-deals">
         <h3 className="it-discover-package-title">Recent Tours</h3>
         <div className="it-discover-deals-box">
-          {tourPackagesDataThree
+          {servicesDataThree
             .map((item) => (
               <div key={item.id} className="it-discover-deals-item">
                 <div className="it-discover-deals-content d-flex align-items-center">
@@ -70,7 +70,7 @@ const Sidebar = () => {
                         alt={item.title}
                         width={90}
                         height={90}
-                        style={{ height: 'auto' }}
+                        style={{ height: "auto" }}
                       />
                     </a>
                   </div>

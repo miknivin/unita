@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import ReactPaginate from 'react-paginate';
-import TourItemFour from './tour-item/tour-item-four';
-import { tourPackagesDataThree } from '@/data/tour-packages-data';
+import { useState } from "react";
+import ReactPaginate from "react-paginate";
+import ServiceItemFour from "./tour-item/tour-item-four";
+import { servicesDataThree } from "@/data/tour-packages-data";
 
 const TourList = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -11,13 +11,10 @@ const TourList = () => {
 
   // Calculate items to display for the current page
   const offset = currentPage * itemsPerPage;
-  const currentTours = tourPackagesDataThree.slice(
-    offset,
-    offset + itemsPerPage
-  );
+  const currentTours = servicesDataThree.slice(offset, offset + itemsPerPage);
 
   // Calculate total pages required
-  const pageCount = Math.ceil(tourPackagesDataThree.length / itemsPerPage);
+  const pageCount = Math.ceil(servicesDataThree.length / itemsPerPage);
 
   const handlePageClick = (data: { selected: number }) => {
     setCurrentPage(data.selected);
@@ -30,7 +27,7 @@ const TourList = () => {
           <div className="row">
             {currentTours.map((tour) => (
               <div key={tour.id} className="col-xl-4 col-lg-6 col-md-6">
-                <TourItemFour tour={tour} />
+                <ServiceItemFour tour={tour} />
               </div>
             ))}
           </div>

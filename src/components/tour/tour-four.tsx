@@ -1,6 +1,6 @@
-import { tourPackagesDataThree } from '@/data/tour-packages-data';
-import TourItemFour from './tour-item/tour-item-four';
-import { StarSvg } from '../svg';
+import { servicesDataThree } from "@/data/tour-packages-data";
+import ServiceItemFour from "./tour-item/tour-item-four";
+import { StarSvg } from "../svg";
 
 const TourFour = () => {
   return (
@@ -22,7 +22,7 @@ const TourFour = () => {
           </div>
           <div className="it-featured-item-wrap">
             <div className="row">
-              {tourPackagesDataThree
+              {servicesDataThree
                 .map((tour) => (
                   <div
                     key={tour.id}
@@ -30,7 +30,7 @@ const TourFour = () => {
                     data-aos="fade-up"
                     data-aos-duration="1200"
                   >
-                    <TourItemFour tour={tour} />
+                    <ServiceItemFour tour={tour} />
                   </div>
                 ))
                 .slice(0, 6)}

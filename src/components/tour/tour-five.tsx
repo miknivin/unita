@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { SwiperOptions } from 'swiper/types';
-import { Autoplay, Navigation } from 'swiper/modules';
-import { tourPackagesDataThree } from '@/data/tour-packages-data';
-import TourItemFour from './tour-item/tour-item-four';
-import { LoveShape } from '../svg';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { SwiperOptions } from "swiper/types";
+import { Autoplay, Navigation } from "swiper/modules";
+import { servicesDataThree } from "@/data/tour-packages-data";
+import ServiceItemFour from "./tour-item/tour-item-four";
+import { LoveShape } from "../svg";
 
 const TourFive = () => {
   const sliderOption: SwiperOptions = {
@@ -17,22 +17,22 @@ const TourFive = () => {
       delay: 3000,
     },
     breakpoints: {
-      '992': {
+      "992": {
         slidesPerView: 3,
       },
-      '768': {
+      "768": {
         slidesPerView: 2,
       },
-      '576': {
+      "576": {
         slidesPerView: 1,
       },
-      '0': {
+      "0": {
         slidesPerView: 1,
       },
     },
     navigation: {
-      prevEl: '.it-cat-prev',
-      nextEl: '.it-cat-next',
+      prevEl: ".it-cat-prev",
+      nextEl: ".it-cat-next",
     },
   };
   return (
@@ -74,10 +74,10 @@ const TourFive = () => {
                   {...sliderOption}
                   className="swiper-wrapper"
                 >
-                  {tourPackagesDataThree
+                  {servicesDataThree
                     .map((tour) => (
                       <SwiperSlide key={tour.id} className="swiper-slide">
-                        <TourItemFour tour={tour} />
+                        <ServiceItemFour tour={tour} />
                       </SwiperSlide>
                     ))
                     .slice(0, 5)}

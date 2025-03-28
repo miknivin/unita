@@ -1,5 +1,5 @@
-import ContactForm from '../form/contact-form';
-import { ClockSvgTwo, LocationSvgThree, PhoneSvgTwo } from '../svg';
+import ContactForm from "../form/contact-form";
+import { ClockSvgTwo, LocationSvgThree, PhoneSvgTwo } from "../svg";
 
 const ContactArea = () => {
   return (
@@ -39,8 +39,14 @@ const ContactArea = () => {
                     </div>
                     <div className="it-contact-text">
                       <span>Call Us:</span>
-                      <a href="tel:+0009873267">(+000) 987-3267</a>
-                      <a href="tel:+88568956238">+88 568 956 238</a>
+                      <span className="d-flex align-items-center">
+                        Cameroon :
+                        <a href="tel:+237673742337"> (+237)673742337</a>
+                      </span>
+                      <span className="d-flex align-items-center">
+                        UAE: <a href="tel:+971522896207">(+971)522896207</a>,
+                        <a href="tel:+971544745424"> {"  "} (+971)544745424</a>
+                      </span>
                     </div>
                   </div>
                 </li>
@@ -53,9 +59,23 @@ const ContactArea = () => {
                     </div>
                     <div className="it-contact-text">
                       <span>Location:</span>
-                      <a target="_blank" href="#">
-                        242 Carlyle RdZebulon, North <br /> Carolina(NC), 27597
-                      </a>
+                      <div>
+                        <span className="fw-bold text-decoration-none">
+                          BAMENDA OFFICE:
+                        </span>{" "}
+                        <span className=" fw-normal">
+                          P.O Box 5185 SONAC Street - BAMENDA, REPUBLIC OF
+                          CAMEROON
+                        </span>
+                      </div>
+                      <div>
+                        <span className="fw-bold text-decoration-none">
+                          LIMBE OFFICE :
+                        </span>{" "}
+                        <span className=" fw-normal">
+                          SAKER Junction New Town - LIMBE. REPUBLIC OF CAMEROON
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </li>

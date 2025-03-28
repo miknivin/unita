@@ -19,16 +19,17 @@ import {
   togglePhotography,
 } from "@/redux/slices/bookingSlice";
 import { IServiceDT } from "@/types/tour-packages-d-t";
-import { tourPackagesDataThree } from "@/data/tour-packages-data";
+import { servicesDataThree } from "@/data/tour-packages-data";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux-hooks";
 import { updatePrice } from "@/utils/helper";
 import { MinusSvg, PlusSvg } from "@/components/svg";
+import ServiceContactForm from "@/components/form/service-contact";
 
 interface IProps {
-  tour: IServiceDT;
+  service: IServiceDT;
 }
 
-const DetailsSidebar = ({ tour }: IProps) => {
+const DetailsSidebar = ({ service }: IProps) => {
   const [isDatePickerOpen, setIsDatePickerOpen] = useState<boolean>(false);
   const serviceCost = 120;
   const dispatch = useAppDispatch();
@@ -48,8 +49,8 @@ const DetailsSidebar = ({ tour }: IProps) => {
 
   // Dispatch the tour object when the component mounts
   useEffect(() => {
-    dispatch(setTour(tour));
-  }, [dispatch, tour]);
+    dispatch(setTour(service));
+  }, [dispatch, service]);
 
   // Dispatch the action to Navigate to booking page
   const handleProceedToBook = () => {
@@ -91,16 +92,16 @@ const DetailsSidebar = ({ tour }: IProps) => {
     <div className="it-discover-right">
       <div className="it-discover-package mb-60">
         <div className="it-discover-package-item">
-          <h3 className="it-discover-package-title">Package Details</h3>
-          <div className="it-discover-package-content">
-            <div className="it-discover-package-list d-flex align-items-center">
+          <h3 className="it-discover-package-title">Send a Query</h3>
+          <div className="it-discover-package-content px-2">
+            {/* <div className="it-discover-package-list d-flex align-items-center">
               <span>Date</span>
               <div className="it-discover-package-box d-flex justify-content-between align-items-center">
                 <span>
                   <DatePicker
                     selected={checkIn ? new Date(checkIn) : null}
                     onChange={handleDateChange}
-                    onFocus={() => setIsDatePickerOpen(true)} // Open on focus of input
+                    onFocus={() => setIsDatePickerOpen(true)} 
                     placeholderText="Select a Date"
                     dateFormat="dd/MM/yyyy"
                     className="form-control"
@@ -116,227 +117,33 @@ const DetailsSidebar = ({ tour }: IProps) => {
                   <i className="fa-solid fa-calendar-days"></i>
                 </div>
               </div>
-            </div>
+            </div> */}
 
-            <div className="it-discover-package-list mt-20">
-              <span className="it-discover-tickets">Tickets</span>
-              <div className="it-discover-passenger d-flex align-items-center justify-content-between">
-                <h3 className="it-discover-passenger-categories">
-                  Adults (18+years)
-                </h3>
-                <div className="it-discover-passenger-quantity d-flex align-items-center">
-                  <span
-                    className="it-cart-minus"
-                    onClick={() =>
-                      dispatch(setAdultTickets(Math.max(0, adultTickets - 1)))
-                    }
-                  >
-                    <MinusSvg />
-                  </span>
-                  <input
-                    className="it-cart-input"
-                    type="text"
-                    value={adultTickets}
-                    readOnly
-                  />
-                  <span
-                    className="it-cart-plus"
-                    onClick={() => dispatch(setAdultTickets(adultTickets + 1))}
-                  >
-                    <PlusSvg />
-                  </span>
-                </div>
-              </div>
-              <div className="it-discover-passenger d-flex align-items-center justify-content-between">
-                <h3 className="it-discover-passenger-categories">
-                  Kids (13years)
-                </h3>
-                <div className="it-discover-passenger-quantity d-flex align-items-center">
-                  <span
-                    className="it-cart-minus"
-                    onClick={() =>
-                      dispatch(setKidTickets(Math.max(0, kidTickets - 1)))
-                    }
-                  >
-                    <MinusSvg />
-                  </span>
-                  <input
-                    className="it-cart-input"
-                    type="text"
-                    value={kidTickets}
-                    readOnly
-                  />
-                  <span
-                    className="it-cart-plus"
-                    onClick={() => dispatch(setKidTickets(kidTickets + 1))}
-                  >
-                    <PlusSvg />
-                  </span>
-                </div>
-              </div>
-              <div className="it-discover-passenger d-flex align-items-center justify-content-between">
-                <h3 className="it-discover-passenger-categories">
-                  Children (5+years)
-                </h3>
-                <div className="it-discover-passenger-quantity d-flex align-items-center">
-                  <span
-                    className="it-cart-minus"
-                    onClick={() =>
-                      dispatch(setChildTickets(Math.max(0, childTickets - 1)))
-                    }
-                  >
-                    <MinusSvg />
-                  </span>
-                  <input
-                    className="it-cart-input"
-                    type="text"
-                    value={childTickets}
-                    readOnly
-                  />
-                  <span
-                    className="it-cart-plus"
-                    onClick={() => dispatch(setChildTickets(childTickets + 1))}
-                  >
-                    <PlusSvg />
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="it-discover-package-service mb-30">
-              <h3 className="it-discover-service-title mb-35">
-                Additional Service
-              </h3>
-              {services.map((service, index) => (
-                <div
-                  key={index}
-                  className="it-discover-service-item d-flex align-items-center justify-content-between"
-                >
-                  <div className="it-discover-service-checkbox d-flex align-items-center">
-                    <input
-                      type="checkbox"
-                      checked={service.state}
-                      onChange={() => dispatch(service.action())}
-                    />
-                    <span>{service.name}</span>
-                  </div>
-                  <div className="it-discover-service-price">
-                    <span>${serviceCost}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="it-discover-package-total">
-              <h3 className="it-discover-package-total-text mb-30">
-                Total Cost: <span>${totalCost.toFixed(2)}</span> / per person
-              </h3>
-              <div className="it-discover-package-proceed">
-                <button
-                  className="it-btn-primary"
-                  onClick={handleProceedToBook}
-                >
-                  Proceed to Book
-                </button>
-              </div>
+            <div className="it-discover-package-list mt-20 ">
+              <ServiceContactForm />
             </div>
           </div>
         </div>
       </div>
 
       <div className="it-discover-info mb-60">
-        <h3 className="it-discover-package-title">Tour Information</h3>
+        <h3 className="it-discover-package-title">Why Choose us</h3>
         <div className="it-discover-info-box">
-          <div className="it-discover-info-item d-flex align-items-center">
-            <div className="it-discover-info-icon">
-              <i className="fa-solid fa-users"></i>
-            </div>
-            <div className="it-discover-info-text">
-              <span className="it-discover-info-subtitle">Max Guests</span>
-              <h5>Date</h5>
-            </div>
-          </div>
-          <div className="it-discover-info-item d-flex align-items-center">
-            <div className="it-discover-info-icon">
-              <i className="fa-solid fa-users"></i>
-            </div>
-            <div className="it-discover-info-text">
-              <span className="it-discover-info-subtitle">Min Age</span>
-              <h5>12+</h5>
-            </div>
-          </div>
-          <div className="it-discover-info-item d-flex align-items-center">
-            <div className="it-discover-info-icon">
-              <i className="fa-solid fa-plane-departure"></i>
-            </div>
-            <div className="it-discover-info-text">
-              <span className="it-discover-info-subtitle">Tour Location</span>
-              <h5>America</h5>
-            </div>
-          </div>
-          <div className="it-discover-info-item d-flex align-items-center">
-            <div className="it-discover-info-icon">
-              <i className="fa-solid fa-globe"></i>
-            </div>
-            <div className="it-discover-info-text">
-              <span className="it-discover-info-subtitle">
-                Languages Support
-              </span>
-              <h5>Global</h5>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="it-discover-deals">
-        <h3 className="it-discover-package-title">Last Minute Deals</h3>
-        <div className="it-discover-deals-box">
-          {tourPackagesDataThree
-            .map((item) => (
-              <div key={item.id} className="it-discover-deals-item">
-                <div className="it-discover-deals-content d-flex align-items-center">
-                  <div className="it-discover-deals-thumb">
-                    <a href="#">
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        width={90}
-                        height={90}
-                        style={{ height: "auto" }}
-                      />
-                    </a>
-                  </div>
-                  <div className="it-discover-deals-dsc">
-                    <div className="it-discover-deals-rating">
-                      <span>
-                        <i className="fa-solid fa-star"></i>
-                      </span>
-                      <span>
-                        <i className="fa-solid fa-star"></i>
-                      </span>
-                      <span>
-                        <i className="fa-solid fa-star"></i>
-                      </span>
-                      <span>
-                        <i className="fa-solid fa-star"></i>
-                      </span>
-                      <span>
-                        <i className="fa-solid fa-star"></i>
-                      </span>
-                    </div>
-                    <h3 className="it-discover-deals-text">
-                      <Link href={`/tour-details/${item.id}`}>
-                        {item.title}
-                      </Link>
-                    </h3>
-                    <span className="it-discover-deals-price">
-                      From <span>${Math.round(updatePrice(item))}</span>
-                    </span>
-                  </div>
+          {service?.whyUs?.map((feature: any, index: number) => (
+            <div key={index}>
+              <div className="it-discover-info-item d-flex align-items-center py-1">
+                <div className="it-discover-info-icon">
+                  <i className="fa-solid fa-check-to-slot" />
+                </div>
+                <div className="it-discover-info-text">
+                  <h5>{feature?.title}</h5>
+                  <span className="it-discover-info-subtitle">
+                    {feature?.description}
+                  </span>
                 </div>
               </div>
-            ))
-            .slice(2, 5)}
+            </div>
+          ))}
         </div>
       </div>
     </div>

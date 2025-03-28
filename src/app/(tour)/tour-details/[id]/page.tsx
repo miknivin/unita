@@ -1,19 +1,19 @@
 import { Metadata } from "next";
-import { tourPackagesData } from "@/data/tour-packages-data";
-import TourDetailsMain from "@/pages/tour-details/tour-details";
+import { ServicesData } from "@/data/tour-packages-data";
+import ServicesDetailsMain from "@/pages/tour-details/tour-details";
 
 export const metadata: Metadata = {
   title: "UNITA - Tour Details Page",
 };
 
-export default function TourDetailsPage({
+export default function ServiceDetailsPage({
   params,
 }: {
   params: { id: string };
 }) {
-  const tour = tourPackagesData.find((tour) => tour.id === Number(params.id));
-  return tour ? (
-    <TourDetailsMain tour={tour} />
+  const service = ServicesData.find((tour) => tour.id === Number(params.id));
+  return service ? (
+    <ServicesDetailsMain service={service} />
   ) : (
     <div className="text-center pt-100">
       Tour not found with id: {params.id}

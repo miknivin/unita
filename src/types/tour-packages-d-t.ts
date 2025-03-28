@@ -4,6 +4,8 @@ export interface IServiceDT {
   id: number;
   image: StaticImageData;
   title: string;
+  heading?: string;
+  overview?: string;
   price: number;
   badgeTitle?: string;
   isFeature?: boolean;
@@ -13,6 +15,7 @@ export interface IServiceDT {
   duration: number;
   travelerCount: number;
   detailsImg: StaticImageData;
+  serviceImage?:StaticImageData[];
   description?: string;
   shortDescription?: string;
   progresses: {
@@ -21,4 +24,9 @@ export interface IServiceDT {
   }[];
   btnText: string;
   checkIn?: string;
+  offerings?: {
+    title: string;
+    description: string;
+  }[];
+  whyUs?: any[];
 }
