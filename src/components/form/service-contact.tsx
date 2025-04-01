@@ -5,18 +5,18 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import ErrorMsg from "../error-msg";
 
-
 interface FormData {
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   phone: string;
   subject: string;
   message: string;
 }
 
-
 const schema = yup.object().shape({
-  name: yup.string().required("Name is required"),
+  firstName: yup.string().required("First name is required"),
+  lastName: yup.string().required("Last name is required"),
   email: yup
     .string()
     .email("Invalid email format")
@@ -25,7 +25,7 @@ const schema = yup.object().shape({
   subject: yup.string().required("Subject is required"),
   message: yup
     .string()
-    .min(10, "Message must be at least 10 characters")
+    .min(5, "Message must be at least 5 characters")
     .required("Message is required"),
 });
 
@@ -48,8 +48,23 @@ const ServiceContactForm = () => {
     <form onSubmit={onSubmit} noValidate>
       <div className="mb-20">
         <div className="it-contact-input-box">
-          <input type="text" placeholder="Name:" {...register("name")} />
-          <ErrorMsg msg={errors.name?.message || ""} />
+          <input
+            type="text"
+            placeholder="First Name:"
+            {...register("firstName")}
+          />
+          <ErrorMsg msg={errors.firstName?.message || ""} />
+        </div>
+      </div>
+
+      <div className="mb-20">
+        <div className="it-contact-input-box">
+          <input
+            type="text"
+            placeholder="Last Name:"
+            {...register("lastName")}
+          />
+          <ErrorMsg msg={errors.lastName?.message || ""} />
         </div>
       </div>
 

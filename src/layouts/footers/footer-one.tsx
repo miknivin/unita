@@ -169,7 +169,7 @@ const FooterOne = ({
               <div className="col-xl-6 col-lg-6">
                 <div className="it-copyright-text text-center text-lg-start">
                   <p>
-                    Copyright © 2024{" "}
+                    Copyright © 2025{" "}
                     <span>
                       <a href="#">UNITAG</a>
                     </span>{" "}

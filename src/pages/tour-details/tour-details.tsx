@@ -16,7 +16,7 @@ const ServicesDetailsMain = ({ service }: Service) => {
     <Wrapper>
       <HeaderTwo />
       <main>
-        <Breadcrumb title={service?.title} subtitle="Tour" />
+        <Breadcrumb title={service?.title} subtitle="service" />
 
         <ServicesDetailsArea service={service} />
         {(service&&service.id === 6) && <EventGridArea />}

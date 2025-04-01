@@ -1,4 +1,4 @@
-@use '../utils' as *;
+@use "../utils" as *;
 /*-----------------------------------------------------------------------------------
 
     Theme Name: Travels and Tour - Tour & Adventure Moment Next Js Template
@@ -239,7 +239,7 @@ input {
   padding: 0 30px;
   line-height: 60px;
   color: var(--it-common-black);
-  text-transform: capitalize;
+  // text-transform: capitalize;
   @include it-placeholder {
     color: #757a7b;
   }
@@ -256,7 +256,7 @@ textarea {
   }
 }
 
-input[type='color'] {
+input[type="color"] {
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;

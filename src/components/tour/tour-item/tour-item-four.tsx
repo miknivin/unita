@@ -25,7 +25,7 @@ const ServiceItemFour = ({ service }: ServiceItemProps) => {
             </a>
           </div>
           <h3 className="it-featured-title">
-            <Link href={`/tour-details/${service.id}`}>{service.title}</Link>
+            <Link href={`/service-details/${service.id}`}>{service.title}</Link>
           </h3>
           <div className="it-featured-review-box pb-25 mb-25 d-flex align-items-center justify-content-between">
             <div className="it-featured-price d-flex align-items-center">

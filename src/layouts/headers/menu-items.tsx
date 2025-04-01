@@ -109,10 +109,10 @@ const MenuItems = ({ isMobileMenu }: IProps) => {
           className={tour ? "it-submenu submenu d-block" : "it-submenu submenu"}
         >
           <li>
-            <Link href="/tour-details/4">Travel & Tour</Link>
-            <Link href="/tour-details/5">Flight ticketing</Link>
-            <Link href="/tour-details/6">Recruitment & HR solutions</Link>
-            <Link href="/tour-details/7">General Contractor</Link>
+            <Link href="/service-details/4">Travel & Tour</Link>
+            <Link href="/service-details/5">Flight ticketing</Link>
+            <Link href="/service-details/6">Recruitment & HR solutions</Link>
+            <Link href="/service-details/7">General Contractor</Link>
           </li>
         </ul>
       </li>

@@ -123,9 +123,9 @@ const AboutOne = () => {
                   </p>
                 </div>
               </div>
-              <Link href="/about" className="it-btn-primary">
+              {/* <Link href="/about" className="it-btn-primary">
                 Discover More
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

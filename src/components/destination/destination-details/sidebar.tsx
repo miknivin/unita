@@ -93,7 +93,7 @@ const Sidebar = () => {
                       </span>
                     </div>
                     <h3 className="it-discover-deals-text">
-                      <Link href={`/tour-details/${item.id}`}>
+                      <Link href={`/service-details/${item.id}`}>
                         {item.title}
                       </Link>
                     </h3>

@@ -89,7 +89,7 @@ const AboutFour = () => {
             <div className="it-about-title-box mb-30">
               <span className="it-section-subtitle">about us</span>
               <h2 className="it-section-title mb-20">
-                Sollicitudin Vestibulum Vulputate Ipsum.
+                Leading Cameroon's Travel & Recruitment Excellence
               </h2>
               <p>
                 Seven years ago, we embarked on a mission to become the leading

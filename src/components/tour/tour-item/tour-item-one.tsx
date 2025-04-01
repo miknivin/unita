@@ -62,7 +62,7 @@ const TourItemOne = ({ tour }: TourItemProps) => {
           </a>
         </div>
         <h3 className="it-featured-title">
-          <Link href={`/tour-details/${tour.id}`}>{tour.title}</Link>
+          <Link href={`/service-details/${tour.id}`}>{tour.title}</Link>
         </h3>
         <div className="it-featured-review-box pb-25 mb-25 d-flex align-items-center justify-content-between">
           <div className="it-featured-price d-flex align-items-center">
@@ -94,7 +94,7 @@ const TourItemOne = ({ tour }: TourItemProps) => {
           </div>
           <div className="it-featured-action">
             <Link
-              href={`/tour-details/${tour.id}`}
+              href={`/service-details/${tour.id}`}
               className="it-btn-blog featured-btn"
             >
               {tour.btnText}
