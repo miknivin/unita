@@ -120,7 +120,7 @@ const DetailsSidebar = ({ service }: IProps) => {
             </div> */}
 
             <div className="it-discover-package-list mt-20 ">
-              <ServiceContactForm />
+              <ServiceContactForm serviceTitle={service?.title} />
             </div>
           </div>
         </div>

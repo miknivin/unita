@@ -16,7 +16,7 @@ export default function ServiceDetailsPage({
     <ServicesDetailsMain service={service} />
   ) : (
     <div className="text-center pt-100">
-      Tour not found with id: {params?.id}
+      Service not found with id: {params?.id}
     </div>
   );
 }

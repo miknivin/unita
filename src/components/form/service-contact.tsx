@@ -3,7 +3,10 @@
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import axios from "axios";
+import { useState, useEffect } from "react";
 import ErrorMsg from "../error-msg";
+import { toast } from "react-toastify";
 
 interface FormData {
   firstName: string;
@@ -12,6 +15,11 @@ interface FormData {
   phone: string;
   subject: string;
   message: string;
+  serviceInterestedIn: string[];
+}
+
+interface ServiceContactFormProps {
+  serviceTitle: string;
 }
 
 const schema = yup.object().shape({
@@ -27,21 +35,47 @@ const schema = yup.object().shape({
     .string()
     .min(5, "Message must be at least 5 characters")
     .required("Message is required"),
+  serviceInterestedIn: yup
+    .array()
+    .of(yup.string().required("Service is required"))
+    .required("At least one service must be selected")
+    .min(1, "At least one service must be selected"),
 });
 
-const ServiceContactForm = () => {
+const ServiceContactForm = ({ serviceTitle }: ServiceContactFormProps) => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
   const {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors },
   } = useForm<FormData>({
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = handleSubmit((data: FormData) => {
-    alert(JSON.stringify(data));
-    reset();
+  useEffect(() => {
+    setValue("serviceInterestedIn", [serviceTitle]);
+  }, [serviceTitle, setValue]);
+
+  const onSubmit = handleSubmit(async (data: FormData) => {
+    setLoading(true);
+    setError("");
+    setSuccess("");
+    try {
+      const response = await axios.post("/api/contact", data);
+      setSuccess("Message sent successfully!");
+      reset();
+      toast.success("Message sent successfully!");
+    } catch (err) {
+      setError("Failed to send message. Please try again.");
+      toast.error("Failed to send message.!");
+    } finally {
+      setLoading(false);
+    }
   });
 
   return (
@@ -103,8 +137,11 @@ const ServiceContactForm = () => {
         </div>
       </div>
 
-      <button type="submit" className="it-btn-primary">
-        Send Message
+      {error && <p className="text-danger">{error}</p>}
+      {success && <p className="text-success">{success}</p>}
+
+      <button type="submit" className="it-btn-primary" disabled={loading}>
+        {loading ? "Sending..." : "Send Message"}
       </button>
     </form>
   );
