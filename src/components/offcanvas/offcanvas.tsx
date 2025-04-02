@@ -41,6 +41,13 @@ const OffCanvas = ({ isOffCanvasOpen, setIsOffCanvasOpen }: IProps) => {
           </div>
           <div className="it-menu-mobile">
             <MenuItems isMobileMenu />
+            <a
+              href="/assets/img/docs/BBH%20Profile%20(5).pdf"
+              download
+              className="it-btn-primary d-flex justify-content-center"
+            >
+              Download brochure
+            </a>
           </div>
           <div className="itoffcanvas__info">
             <h3 className="offcanva-title">Get In Touch</h3>

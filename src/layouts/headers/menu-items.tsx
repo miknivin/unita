@@ -120,15 +120,9 @@ const MenuItems = ({ isMobileMenu }: IProps) => {
       <li>
         <Link href="/contact">Contact</Link>
       </li>
-      <li>
-        <a
-          href="/assets/img/docs/BBH%20Profile%20(5).pdf"
-          download
-          className="it-btn-primary d-flex justify-content-center"
-        >
-          Download brochure
-        </a>
-      </li>
+      {/* <li>
+        
+      </li> */}
     </ul>
   );
 };
