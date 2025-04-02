@@ -97,7 +97,7 @@ const AboutOne = () => {
                     opportunities while also curating unforgettable travel
                     experiences. Whether organizing trips for tourists,
                     individuals, or groups, we ensure seamless journeys across
-                    the breathtaking cities of the Gulf Region, America, and
+                    the breathtaking cities of the Gulf Region, America and
                     Europe, creating lasting memories and meaningful
                     connections.
                   </p>

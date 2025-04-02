@@ -66,7 +66,7 @@ const FooterOne = ({
                 </div>
                 <div className="it-footer-content">
                   <p>
-                    Bringing your vision to life with quality, efficiency, and
+                    Bringing your vision to life with quality, efficiency and
                     expertise.
                   </p>
                   <div className="it-footer-social">

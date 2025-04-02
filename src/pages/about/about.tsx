@@ -4,6 +4,7 @@ import Breadcrumb from "@/components/breadcrumb/breadcrumb";
 import ChooseSeven from "@/components/choose/choose-seven";
 import Newsletter from "@/components/newsletter/newsletter";
 import TestimonialFive from "@/components/testimonial/testimonial-five";
+import TestimonialTwo from "@/components/testimonial/testimonial-two";
 import TourFive from "@/components/tour/tour-five";
 import VideoTwo from "@/components/video/video-two";
 import FooterOne from "@/layouts/footers/footer-one";
@@ -26,8 +27,8 @@ const AboutMain = () => {
 
         <TourFive /> */}
 
-        <TestimonialFive />
-
+        {/* <TestimonialFive /> */}
+        <TestimonialTwo />
         <Newsletter itemClass="it-newsletter-area it-newsletter-height fix p-relative theme-bg" />
       </main>
 

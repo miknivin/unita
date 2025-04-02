@@ -25,15 +25,18 @@ const OffCanvas = ({ isOffCanvasOpen, setIsOffCanvasOpen }: IProps) => {
               <i className="fal fa-times"></i>
             </button>
           </div>
-          <div className="itoffcanvas__logo">
+          <div
+            style={{ width: "fit-content", borderRadius: "10px" }}
+            className="itoffcanvas__logo bg-white"
+          >
             <Link href="/">
-              <Image src={Logo} alt="UNITAG" width={129} height={40} />
+              <Image src={Logo} alt="UNITAG" width={80} height={40} />
             </Link>
           </div>
           <div className="itoffcanvas__text">
             <p>
-              Suspendisse interdum consectetur libero id. Fermentum leo vel orci
-              porta non. Euismod viverra nibh cras pulvinar suspen.
+              Bringing your vision to life with quality, efficiency and
+              expertise.
             </p>
           </div>
           <div className="it-menu-mobile">
@@ -49,7 +52,7 @@ const OffCanvas = ({ isOffCanvasOpen, setIsOffCanvasOpen }: IProps) => {
               </div>
               <div className="itoffcanvas__info-address">
                 <span>Email</span>
-                <a href="maito:hello@yourmail.com">hello@yourmail.com</a>
+                <a href="maito:info@unitagltd.com">info@unitagltd.com</a>
               </div>
             </div>
             <div className="it-info-wrapper mb-20 d-flex align-items-center">
@@ -60,7 +63,18 @@ const OffCanvas = ({ isOffCanvasOpen, setIsOffCanvasOpen }: IProps) => {
               </div>
               <div className="itoffcanvas__info-address">
                 <span>Phone</span>
-                <a href="tel:(00)45611227890">(00) 456 1122 7890</a>
+                <a href="tel:+971522896207">+971 522896207</a>
+              </div>
+            </div>
+            <div className="it-info-wrapper mb-20 d-flex align-items-center">
+              <div className="itoffcanvas__info-icon">
+                <a href="#">
+                  <i className="fal fa-phone-alt"></i>
+                </a>
+              </div>
+              <div className="itoffcanvas__info-address">
+                <span>Phone</span>
+                <a href="tel:+237673742337">+237 673742337</a>
               </div>
             </div>
             <div className="it-info-wrapper mb-20 d-flex align-items-center">
@@ -70,12 +84,22 @@ const OffCanvas = ({ isOffCanvasOpen, setIsOffCanvasOpen }: IProps) => {
                 </a>
               </div>
               <div className="itoffcanvas__info-address">
-                <span>Location</span>
-                <a
-                  href="htits://www.google.com/maps/@37.4801311,22.8928877,3z"
-                  target="_blank"
-                >
-                  Riverside 255, San Francisco, USA{" "}
+                <span>Location- Bamenda</span>
+                <a href="#">
+                  P.O Box 5185 SONAC Street - BAMENDA, REPUBLIC OF CAMEROON{" "}
+                </a>
+              </div>
+            </div>
+            <div className="it-info-wrapper mb-20 d-flex align-items-center">
+              <div className="itoffcanvas__info-icon">
+                <a href="#">
+                  <i className="fas fa-map-marker-alt"></i>
+                </a>
+              </div>
+              <div className="itoffcanvas__info-address">
+                <span>Location- LIMBE</span>
+                <a href="#">
+                  SAKER Junction New Town - LIMBE. REPUBLIC OF CAMEROON{" "}
                 </a>
               </div>
             </div>

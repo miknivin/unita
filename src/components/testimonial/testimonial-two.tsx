@@ -97,7 +97,9 @@ const TestimonialTwo = () => {
                       >
                         <div className="it-testi-2-item">
                           <div className="it-testi-2-dsc mb-15">
-                            <i>{testimonial.description}</i>
+                            <p className="text-white">
+                              {testimonial.description}
+                            </p>
                           </div>
                           <div className="it-testi-2-avater-content d-flex align-items-center justify-content-between">
                             <div className="it-testi-2-avater-info">

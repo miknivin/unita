@@ -38,7 +38,7 @@ const HeaderTwo = ({ headerLogo }: HeaderProps) => {
 
   return (
     <>
-      <SearchPopUp isPopUpOpen={isPopUpOpen} setIsPopUpOpen={setIsPopUpOpen} />
+      {/* <SearchPopUp isPopUpOpen={isPopUpOpen} setIsPopUpOpen={setIsPopUpOpen} /> */}
 
       <OffCanvas
         isOffCanvasOpen={isOffCanvasOpen}
@@ -80,9 +80,13 @@ const HeaderTwo = ({ headerLogo }: HeaderProps) => {
                 <div className="col-xl-3 col-lg-6 col-md-6 col-6">
                   <div className="it-header-bottom-right d-flex align-items-center justify-content-end">
                     <div className="it-header-bottom-right-button ml-30">
-                      <Link href="/contact" className="it-btn-primary">
-                        Contact Us
-                      </Link>
+                      <a
+                        href="/assets/img/docs/BBH%20Profile%20(5).pdf"
+                        download
+                        className="it-btn-primary"
+                      >
+                        Download brochure
+                      </a>
                     </div>
                     <div className="it-header-bar-wrap d-xl-none">
                       <button

@@ -39,11 +39,11 @@ const ContactArea = () => {
                     </div>
                     <div className="it-contact-text">
                       <span>Call Us:</span>
-                      <span className="d-flex align-items-center">
+                      <span className="d-flex align-items-center flex-wrap">
                         Cameroon :
                         <a href="tel:+237673742337"> (+237)673742337</a>
                       </span>
-                      <span className="d-flex align-items-center">
+                      <span className="d-flex align-items-center flex-wrap">
                         UAE: <a href="tel:+971522896207">(+971)522896207</a>,
                         <a href="tel:+971544745424"> {"  "} (+971)544745424</a>
                       </span>

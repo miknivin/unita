@@ -56,10 +56,10 @@ const TestimonialFive = () => {
                 What our Customers are{' '}
                 <span className="it-breack-text">saying us?</span>
               </h3>
-              <p className="text-white">
+              {/* <p className="text-white">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt.
-              </p>
+              </p> */}
             </div>
             <div className="it-testi-inner-text mb-20 d-flex">
               <div className="it-testi-count-item mr-40">
