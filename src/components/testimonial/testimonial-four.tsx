@@ -45,7 +45,7 @@ const TestimonialFour = () => {
               </span>
               <h3 className="it-section-title text-white">
                 What our Customers are <br />
-                <span className="it-breack-text">saying us?</span>
+                <span className="it-breack-text">saying about us?</span>
               </h3>
             </div>
           </div>

@@ -44,7 +44,7 @@ const TestimonialTwo = () => {
             <div className="it-testi-2-title-box">
               <span className="it-section-subtitle">Testimonial</span>
               <h3 className="it-section-title">
-                What our Customers are <span>saying us?</span>
+                What our Customers are <span>saying about us?</span>
               </h3>
             </div>
           </div>
