@@ -127,10 +127,10 @@ const HeaderTop = () => {
                   </div>
                 </div> */}
                 <div className="it-header-top-right-social p-relative text-end">
-                  <a href="">
+                  <a href="https://www.facebook.com/share/1E8rXLYnvr/">
                     <i className="fa-brands fa-facebook-f"></i>
                   </a>
-                  <a href="">
+                  {/* <a href="">
                     <i className="fa-brands fa-twitter"></i>
                   </a>
                   <a href="">
@@ -138,7 +138,7 @@ const HeaderTop = () => {
                   </a>
                   <a href="">
                     <i className="fa-brands fa-linkedin"></i>
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>

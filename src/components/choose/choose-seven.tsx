@@ -8,7 +8,7 @@ import {
 } from "../svg";
 
 import shapeImg from "@/assets/img/inner-page/chooseuse/inn-chooseus-shape.jpg";
-import chooseImg from "@/assets/img/inner-page/chooseuse/inn-chooseus1.jpg";
+import chooseImg from "@/assets/img/inner-page/chooseuse/inn-chooseus1.webp";
 
 const chooseData = [
   [

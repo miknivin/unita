@@ -25,7 +25,7 @@ const counterData = [
   {
     id: 4,
     countIcon: "flaticon-luggage",
-    countNum: 25,
+    countNum: 7,
     countSubtext: "+",
     countTitle: "Year Of Service",
   },

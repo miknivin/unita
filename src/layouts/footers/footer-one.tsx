@@ -70,10 +70,10 @@ const FooterOne = ({
                     expertise.
                   </p>
                   <div className="it-footer-social">
-                    <a href="#">
+                    <a href="https://www.facebook.com/share/1E8rXLYnvr/">
                       <i className="flaticon-facebook-app-symbol"></i>
                     </a>
-                    <a href="#">
+                    {/* <a href="#">
                       <i className="flaticon-twitter"></i>
                     </a>
                     <a href="#">
@@ -81,7 +81,7 @@ const FooterOne = ({
                     </a>
                     <a href="#">
                       <i className="flaticon-linkedin"></i>
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </div>
