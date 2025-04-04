@@ -1,6 +1,8 @@
 // models/jobPost.js
 import mongoose from "mongoose";
 import { Company } from "./Company";
+import Contacts from "./Contacts";
+
 const jobPostSchema = new mongoose.Schema(
   {
     company: {
