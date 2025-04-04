@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import dbConnect from "@/lib/db/connection";
 import { Applicant } from "@/models/Applicant";
 import { uploadToCloudinary } from "@/utils/upload"; 
+import { JobPost } from "@/models/JobpostSchema";
 
 
 

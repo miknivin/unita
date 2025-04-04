@@ -1,7 +1,7 @@
 // app/api/jobPosts/[id]/route.js
 
-import { JobPost } from "@/models/Jobpost";
 import { NextResponse } from "next/server";
+import { JobPost } from "@/models/JobpostSchema";
 
 // GET: Retrieve a job post by ID
 export async function GET(req, { params }) {

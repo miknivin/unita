@@ -1,4 +1,4 @@
-import { JobPost } from "@/models/Jobpost";
+import { JobPost } from "@/models/JobpostSchema";
 import { NextResponse } from "next/server";
 import dbConnect from "./../../../lib/db/connection";
 
