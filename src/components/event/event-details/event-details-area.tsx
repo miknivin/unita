@@ -1,38 +1,36 @@
-import Image from 'next/image';
-import { RightArrow } from '@/components/svg';
-import { IEventDT } from '@/types/event-d-t';
-
-import detailsImg from '@/assets/img/inner-page/events/events-details-2.jpg';
+import { RightArrow } from "@/components/svg";
+import { JobPost } from "@/types/job-d-t";
+import { useState } from "react";
+import ApplicationForm from "../../modals/ApplicationModal";
+import ApplicationModal from "../../modals/ApplicationModal";
+import Link from "next/link";
 
 interface IProps {
-  event: IEventDT;
+  event: JobPost;
 }
 
 const EventDetailsArea = ({ event }: IProps) => {
+  console.log(event);
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className="it-events-details-area pt-120 pb-120">
       <div className="container">
         <div className="row">
-          <div className="col-xl-5 col-lg-5">
-            <div className="it-events-details-thumb text-md-center mr-40">
-              <Image
-                src={event.detailsImage}
-                alt="Details Img"
-                width={500}
-                height={657}
-                style={{ height: 'auto' }}
-              />
-            </div>
-          </div>
-          <div className="col-xl-7 col-lg-7">
+          {/* Job Details */}
+          <div className="col-12">
             <div className="it-events-details-content">
-              <button className="it-events-details-btn mb-20">
+              <Link href={"/jobs"} className="it-events-details-btn mb-20">
                 <i className="fa-solid fa-angles-left"></i>
-                All Events
-              </button>
-              <h3 className="it-section-title mb-25">{event.title}</h3>
+                All Jobs
+              </Link>
+
+              {/* Job Title */}
+              <h3 className="it-section-title mb-25">{event.jobTitle}</h3>
+
+              {/* Job Info */}
               <div className="it-events-details-info mb-30">
                 <div className="row align-items-center">
+                  {/* Application Deadline */}
                   <div className="col-xl-6 col-lg-6 col-md-6">
                     <div className="it-events-details-info-wrap">
                       <div className="it-events-details-info-box d-flex align-items-center">
@@ -41,17 +39,17 @@ const EventDetailsArea = ({ event }: IProps) => {
                         </div>
                         <div className="it-events-details-info-content">
                           <h3 className="it-events-details-info-title">
-                            Event Date
+                            Application Deadline
                           </h3>
                           <span>
-                            {event.eventDate} {event.eventMonth},{' '}
-                            {event.eventYear} <br />
-                            {event.eventTime}
+                            {new Date(event.applicationDeadline).toDateString()}
                           </span>
                         </div>
                       </div>
                     </div>
                   </div>
+
+                  {/* Job Location */}
                   <div className="col-xl-6 col-lg-6 col-md-6">
                     <div className="it-events-details-info-wrap">
                       <div className="it-events-details-info-box d-flex align-items-center">
@@ -60,90 +58,127 @@ const EventDetailsArea = ({ event }: IProps) => {
                         </div>
                         <div className="it-events-details-info-content">
                           <h3 className="it-events-details-info-title">
-                            Event Location
+                            Job Location
                           </h3>
-                          <span>{event.eventAddress}</span>
+                          <span>{event.jobLocation}</span>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod temporincididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip
-              </p>
+
+              {/* Job Description */}
+              <p>{event.jobDescription}</p>
+
+              {/* Apply Button */}
               <div className="it-events-btn mb-40">
-                <a href="#" className="it-btn-primary">
+                <button
+                  onClick={() => setShowModal(true)}
+                  className="it-btn-primary"
+                >
                   <span>
-                    Join Event <RightArrow />
+                    Apply Now <RightArrow />
                   </span>
-                </a>
+                </button>
               </div>
+
+              {/* Job Details */}
               <div className="it-events-details-link">
                 <div className="it-events-details-link-content d-sm-flex align-items-center">
+                  {/* Job Salary */}
                   <div className="it-events-details-lunch d-flex align-items-center">
                     <div className="it-events-details-lunch-icon">
-                      <i className="fa-light fa-calendar"></i>
+                      <i className="fa-light fa-dollar-sign"></i>
                     </div>
                     <span>
-                      {event.eventDate} {event.eventMonth} {event.eventYear} @
-                      {event.eventTime}
+                      Salary: $
+                      {event.salaryRange?.min
+                        ? `${event.salaryRange.min} - ${event.salaryRange.max}`
+                        : "Not Specified"}
                     </span>
                   </div>
+
+                  {/* Company Website */}
                   <div className="it-events-details-lunch d-flex align-items-center">
                     <div className="it-events-details-lunch-icon">
                       <i className="fa-regular fa-globe"></i>
                     </div>
                     <span>
-                      <a href="#">http://example.come</a>
+                      <a
+                        href={event.company?.website || "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {event.company?.website || "No Website"}
+                      </a>
                     </span>
                   </div>
-                  <div className="it-events-details-bars">
+
+                  {/* Share Button */}
+                  {/* <div className="it-events-details-bars">
                     <button>
                       <i className="fa-regular fa-bars"></i>
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Key Responsibilities & Benefits */}
         <div className="it-events-details-bottom pt-40">
           <div className="row">
             <div className="col-xl-6 col-lg-6">
               <div className="it-events-details-content">
-                <h3 className="it-section-title mb-20">Explored</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  At volutpat diam ut venenatis tellus in metus. Sem et tortor
-                  consequat id porta. Et malesuada fames ac turpis egestas sed.
-                  Condimentum vitae sapien pellentesque habitant morbi tristique
-                  senectus et. Cras semper auctor neque vitae. Turpis in eu mi
-                  bibendum neque. Pellentesque habitant morbi tristique senectus
-                  et netus. Ut morbi tincidunt augue interdum velit euismod. At
-                  in tellus integer feugiat scelerisque varius morbi. Ultrices
-                  neque ornare aenean euismod. Imperdiet proin fermentum leo
-                </p>
+                <h3 className="it-section-title mb-20">Key Responsibilities</h3>
+                <div className="d-flex flex-wrap gap-2">
+                  {event.keyResponsibilities?.length ? (
+                    event.keyResponsibilities.map((responsibility, index) => (
+                      <button
+                        key={index}
+                        type="button"
+                        className="btn btn-outline-primary btn-sm"
+                      >
+                        {responsibility}
+                      </button>
+                    ))
+                  ) : (
+                    <p>No key responsibilities specified</p>
+                  )}
+                </div>
               </div>
             </div>
             <div className="col-xl-6 col-lg-6">
-              <div className="it-events-details-thumb d-flex justify-content-end">
-                <Image
-                  src={detailsImg}
-                  alt="Details Img"
-                  width={500}
-                  height={500}
-                  style={{ height: 'auto' }}
-                />
+              <div className="it-events-details-content">
+                <h3 className="it-section-title mb-20">Benefits</h3>
+                <div className="d-flex flex-wrap gap-2">
+                  {event.benefits?.length ? (
+                    event.benefits.map((benefit, index) => (
+                      <button
+                        key={index}
+                        type="button"
+                        className="btn btn-outline-primary btn-sm"
+                      >
+                        {benefit}
+                      </button>
+                    ))
+                  ) : (
+                    <p>No benefits specified</p>
+                  )}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {showModal && (
+        <ApplicationModal
+          onClose={() => setShowModal(false)}
+          JobId={event._id}
+        />
+      )}
     </div>
   );
 };

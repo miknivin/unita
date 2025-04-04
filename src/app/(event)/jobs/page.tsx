@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import EventGridMain from "@/pages/event/event-grid";
 
 export const metadata: Metadata = {
-  title: "UNITAG - Event Page",
+  title: "UNITAG - Job Page",
 };
 
 const EventGridPage = () => {

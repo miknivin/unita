@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const HeroBannerTwo = () => {
   return (
     <div className="it-slider-2-area it-slider-2-ovarlay it-slider-2-height p-relative">
@@ -30,12 +32,14 @@ const HeroBannerTwo = () => {
                     "Recruitment & HR solutions",
                     "General contractor",
                   ].map((text, index) => (
-                    <button
+                    <Link
+                      href={`/service-details/${index + 4}`}
+                      style={{ color: "#fffe00" }}
                       key={index}
                       className="it-btn-primary d-flex align-items-center gap-2"
                     >
                       {text} <i className="fa-solid fa-arrow-right"></i>
-                    </button>
+                    </Link>
                   ))}
                 </div>
 

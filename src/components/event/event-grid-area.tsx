@@ -1,65 +1,93 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import Image from "next/image";
-import Link from "next/link";
-import { eventDataOne } from "@/data/event-data";
 import ReactPaginate from "react-paginate";
+import { JobPost } from "./../../types/job-d-t";
+import Link from "next/link";
 
 const EventGridArea = () => {
-  const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 6; // Define the number of items per page
+  const [currentPage, setCurrentPage] = useState<number>(0);
+  const [events, setEvents] = useState<JobPost[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const itemsPerPage = 6;
 
-  // Calculate items to display for the current page
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const response = await axios.get<{ jobs: JobPost[] }>("/api/jobs");
+        setEvents(response.data.jobs);
+      } catch (error) {
+        console.error("Error fetching jobs:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchJobs();
+  }, []);
+
   const offset = currentPage * itemsPerPage;
-  const currentEvents = eventDataOne.slice(offset, offset + itemsPerPage);
-
-  // Calculate total pages required
-  const pageCount = Math.ceil(eventDataOne.length / itemsPerPage);
+  const currentEvents = events.slice(offset, offset + itemsPerPage);
+  const pageCount = Math.ceil(events.length / itemsPerPage);
 
   const handlePageClick = (data: { selected: number }) => {
     setCurrentPage(data.selected);
   };
+
+  if (loading) {
+    return (
+      <div className="d-flex justify-content-center my-4">
+        <div className="spinner-border text-primary" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="it-events-area it-events-style-2 pt-120 pb-120">
       <div className="container">
         <div className="row">
           {currentEvents.map((event) => (
-            <div key={event.id} className="col-xl-4 col-lg-4 col-md-6">
-              <div className="it-events-item">
-                <div className="it-events-date-box d-flex align-items-center justify-content-center">
-                  <span className="it-events-date">{event?.companyName}</span>
+            <div key={event._id} className="col-xl-4 col-lg-4 col-md-6">
+              <Link
+                href={`/job-details/${event._id}`}
+                className="it-events-item "
+              >
+                <div className="it-events-date-box d-flex align-items-center  justify-content-center">
+                  <span className="it-events-date ">
+                    {event.company?.name || "Unknown Company"}
+                  </span>
                 </div>
-                <div className="it-events-thumb fix">
+                {/* <div className="it-events-thumb fix">
                   <Image
-                    src={event.image}
-                    alt={event.title}
+                    src={"/default-job-image.jpg"} // Placeholder image
+                    alt={event.jobTitle}
                     width={370}
                     height={212}
                     style={{ height: "auto" }}
                   />
-                </div>
-                <div className="it-events-content">
+                </div> */}
+                <div className="it-events-content border-top-0 border  rounded-bottom-3 border-1 border-black">
                   <div className="it-events-meta mb-10 d-flex align-items-center">
                     <div className="it-events-meta-icon mr-5">
                       <i className="fa-solid fa-location-dot"></i>
                     </div>
                     <span className="it-events-meta-text">
-                      {event.eventAddress}
+                      {event.jobLocation}
                     </span>
                   </div>
                   <h3 className="it-events-title">
-                    {/* <Link href={`/event-details/${event.id}`}>
-                      {event.title}
-                    </Link> */}
-                    <button >
-                      {event.title}
-                    </button>
+                    <button>{event.jobTitle}</button>
                   </h3>
-                  <p>{event.description}</p>
+                  <span className="bg-success-subtle px-3 py-1  border rounded-3 mb-3">
+                    ${event.salaryRange?.min}-${event.salaryRange?.max}
+                  </span>
+                  <p className="job-description mt-3">{event.jobDescription}</p>
                 </div>
-              </div>
+              </Link>
             </div>
           ))}
         </div>

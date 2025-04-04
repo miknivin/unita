@@ -7,6 +7,7 @@ import HeroBannerTwo from "@/components/hero-banner/hero-banner-two";
 import Newsletter from "@/components/newsletter/newsletter";
 import ShopTwo from "@/components/shop/shop-two";
 import TestimonialTwo from "@/components/testimonial/testimonial-two";
+import TourThree from "@/components/tour/tour-three";
 import TourTwo from "@/components/tour/tour-two";
 import WorkOne from "@/components/work/work-one";
 import FooterOne from "@/layouts/footers/footer-one";
@@ -26,6 +27,8 @@ const HomeTwoMain = () => {
         {/* <DestinationTwo /> */}
 
         <TourTwo />
+
+        <TourThree />
 
         {/* <WorkOne /> */}
 

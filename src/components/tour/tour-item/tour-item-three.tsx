@@ -1,105 +1,37 @@
-import Image from "next/image";
+import { JobPost } from "@/types/job-d-t";
 import Link from "next/link";
-import { IServiceDT } from "@/types/tour-packages-d-t";
-import { updatePrice } from "@/utils/helper";
 
-interface TourItemProps {
-  tour: IServiceDT;
-}
-
-const TourItemThree = ({ tour }: TourItemProps) => {
+const JobItemThree = ({ job }: { job: JobPost }) => {
   return (
-    <div className="it-featured-item p-relative">
-      <div className="it-featured-thumb p-relative">
-        <Image
-          src={tour.image}
-          alt={tour.title}
-          width={370}
-          height={250}
-          style={{ height: "auto" }}
-        />
-      </div>
-      <div className="it-featured-top d-flex align-items-center">
-        {tour.badgeTitle && (
-          <div className="it-featured-offer">
-            <span>{tour.badgeTitle} off</span>
-          </div>
-        )}
-
-        {tour.isFeature && (
-          <div className="it-featured-categories">
-            <span>featured</span>
-          </div>
-        )}
-      </div>
-      <div className="it-featured-content">
-        <div className="it-featured-react-box d-flex align-items-center">
-          <div className="it-featured-react">
-            <button>
-              <span>
-                <i className="fa-light fa-heart"></i>
-              </span>
-            </button>
-          </div>
-          <div className="it-featured-react">
-            <button>
-              <span>
-                <i className="fa-regular fa-camera"></i>
-              </span>
-            </button>
-          </div>
+    <div>
+      <Link
+        href={`/job-details/${job._id}`}
+        style={{ boxShadow: "0 4px 30px 0 rgba(0, 0, 0, 0.1)" }}
+        className="it-events-item p-0 m-0 border-0"
+      >
+        <div className="it-events-date-box d-flex align-items-center justify-content-center">
+          <span className="it-events-date fs-3">
+            {job.company?.name || "Unknown Company"}
+          </span>
         </div>
-        <h3 className="it-featured-title">
-          <Link href={`/service-details/${tour.id}`}>{tour.title}</Link>
-        </h3>
-        <div className="it-featured-mid-box mb-30">
-          <div className="it-featured-review-box">
-            <div className="it-featured-review d-flex align-items-center">
-              <i className="fa-solid fa-star"></i>
-              <p>
-                <span>{tour.rating}</span> ({tour.review}k review)
-              </p>
+        <div className="it-events-content p-3 border-top-0 border  rounded-bottom-3  border-1 border-black">
+          <div className="it-events-meta mb-10 d-flex align-items-center">
+            <div className="it-events-meta-icon mr-5">
+              <i className="fa-solid fa-location-dot"></i>
             </div>
-            <div className="it-featured-meta mb-15">
-              <a href="https://www.google.com/maps">
-                <i className="fa-solid fa-location-dot"></i> {tour.address}
-              </a>
-            </div>
+            <span className="it-events-meta-text">{job.jobLocation}</span>
           </div>
-          <div className="it-featured-price-box d-flex align-items-center justify-content-between">
-            <div className="it-featured-meta d-flex align-items-center">
-              <div className="it-featured-time">
-                <span>
-                  <i className="fa-regular fa-clock"></i> {tour.duration} days
-                </span>
-              </div>
-              <div className="it-featured-user">
-                <span>
-                  <i className="fa-regular fa-user"></i> {tour.travelerCount}
-                </span>
-              </div>
-            </div>
-            <div className="it-featured-price d-flex align-items-center">
-              <i className="fa-regular fa-circle-dollar"></i>
-              <p>
-                From <span>${Math.round(updatePrice(tour)).toFixed(2)}</span>{" "}
-                {tour.badgeTitle && <del>${tour.price.toFixed(2)}</del>}
-              </p>
-            </div>
-          </div>
+          <h3 className="it-events-title">{job.jobTitle}</h3>
+          <span className="bg-success-subtle px-3 py-1 border rounded-3 mb-3">
+            ${job.salaryRange?.min}-${job.salaryRange?.max}
+          </span>
+          <p style={{ marginRight: "0" }} className="job-description mt-3 mr-0">
+            {job.jobDescription}
+          </p>
         </div>
-        <div className="it-featured-bottom">
-          <div className="it-featured-action text-center">
-            <Link
-              href={`/service-details/${tour.id}`}
-              className="it-btn-blog featured-btn-black w-100"
-            >
-              {tour.btnText}
-            </Link>
-          </div>
-        </div>
-      </div>
+      </Link>
     </div>
   );
 };
-export default TourItemThree;
+
+export default JobItemThree;

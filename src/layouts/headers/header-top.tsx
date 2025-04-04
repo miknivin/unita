@@ -65,7 +65,7 @@ const HeaderTop = () => {
                     <span>
                       <PhoneSvg />
                     </span>
-                    <a href="tel:+971522896207/">+971 522896207</a>
+                    <a href="tel:+971544745424">+971 544745424</a>
                   </li>
                   <li>
                     <span>

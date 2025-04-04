@@ -70,7 +70,7 @@ const OffCanvas = ({ isOffCanvasOpen, setIsOffCanvasOpen }: IProps) => {
               </div>
               <div className="itoffcanvas__info-address">
                 <span>Phone</span>
-                <a href="tel:+971522896207">+971 522896207</a>
+                <a href="tel:+971544745424">+971 544745424</a>
               </div>
             </div>
             <div className="it-info-wrapper mb-20 d-flex align-items-center">

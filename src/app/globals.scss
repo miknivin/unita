@@ -1,9 +1,17 @@
-@import 'bootstrap/scss/bootstrap';
-@import 'swiper/scss';
-@import 'swiper/scss/autoplay';
-@import 'swiper/scss/effect-fade';
-@import 'swiper/scss/navigation';
-@import 'swiper/scss/pagination';
-@import 'node_modules/react-modal-video/scss/modal-video.scss';
-@import 'react-toastify/dist/ReactToastify.css';
-@import '../../public/assets/scss/main.scss';
+@import "bootstrap/scss/bootstrap";
+@import "swiper/scss";
+@import "swiper/scss/autoplay";
+@import "swiper/scss/effect-fade";
+@import "swiper/scss/navigation";
+@import "swiper/scss/pagination";
+@import "node_modules/react-modal-video/scss/modal-video.scss";
+@import "react-toastify/dist/ReactToastify.css";
+@import "../../public/assets/scss/main.scss";
+
+.job-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Limit to 4 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
