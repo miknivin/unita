@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import ErrorMsg from "../error-msg";
+import { toast } from "react-toastify";
 
 interface FormData {
   name: string;
@@ -74,6 +75,8 @@ const ApplicationForm = ({ jobId, onClose }: ApplicationFormProps) => {
       setSuccess(
         response.data.message || "Application submitted successfully!"
       );
+      toast.success("Application submitted successfully");
+      onClose();
       reset();
     } catch (err: any) {
       setError(err.response?.data?.message || "Something went wrong.");

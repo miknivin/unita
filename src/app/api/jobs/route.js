@@ -1,4 +1,4 @@
-import { JobPost } from "@/models/JobpostSchema";
+import { JobPost } from "@/models/JobpostSchema.js";
 import { NextResponse } from "next/server";
 import dbConnect from "./../../../lib/db/connection";
 
@@ -6,7 +6,7 @@ export async function GET() {
   try {
     await dbConnect();
     const jobPosts = await JobPost.find().populate("company");
-    console.log(jobPosts);
+  
 
     return NextResponse.json({
       success: true,

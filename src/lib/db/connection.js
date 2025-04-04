@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-
+import { JobPost } from "@/models/JobpostSchema.js";
+import { Applicant } from "@/models/Applicant";
 const MONGODB_URI = process.env.MONGODB_URI;
 
 if (!MONGODB_URI) {
