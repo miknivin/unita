@@ -3,11 +3,7 @@ import dbConnect from "@/lib/db/connection";
 import { Applicant } from "@/models/Applicant";
 import { uploadToCloudinary } from "@/utils/upload"; 
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
+
 
 export async function POST(req) {
   try {

@@ -14,9 +14,9 @@ const EventDetailsMain = ({ params }: { params: { id: string } }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (params.id) {
+    if (params && params?.id) {
       axios
-        .get(`/api/jobs/${params.id}`)
+        .get(`/api/jobs/${params?.id}`)
         .then((response) => {
           setJob(response.data.data);
         })
@@ -27,7 +27,7 @@ const EventDetailsMain = ({ params }: { params: { id: string } }) => {
           setLoading(false);
         });
     }
-  }, [params.id]);
+  }, [params, params?.id]);
 
   if (loading) {
     return (

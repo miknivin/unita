@@ -10,5 +10,10 @@ export default function EventDetailsPage({
 }: {
   params: { id: string };
 }) {
+  // Check if params and params.id exist
+  if (!params || !params.id) {
+    return <p>Invalid job ID or parameters not provided</p>;
+  }
+
   return <EventDetailsMain params={params} />;
 }
