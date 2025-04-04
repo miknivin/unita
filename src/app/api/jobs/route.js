@@ -6,6 +6,8 @@ export async function GET() {
   try {
     await dbConnect();
     const jobPosts = await JobPost.find().populate("company");
+    console.log(jobPosts);
+
     return NextResponse.json({
       success: true,
       jobs: jobPosts,
