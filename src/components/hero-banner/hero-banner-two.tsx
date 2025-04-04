@@ -51,9 +51,14 @@ const HeroBannerTwo = () => {
                     "Recruitment & HR solutions",
                     "General contractor",
                   ].map((text, index) => (
-                    <button key={index} className="it-btn-primary scroll-item">
+                    <Link
+                      href={`/service-details/${index + 4}`}
+                      style={{ color: "#fffe00" }}
+                      key={index}
+                      className="it-btn-primary scroll-item"
+                    >
                       {text} <i className="fa-solid fa-arrow-right"></i>
-                    </button>
+                    </Link>
                   ))}
                 </div>
               </div>
