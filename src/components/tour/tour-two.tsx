@@ -9,7 +9,7 @@ const TourTwo = () => {
         <div className="row justify-content-center">
           <div className="col-xl-8">
             <div className="it-featured-title-box mb-75 text-center">
-              <span className="it-section-subtitle">Services</span>
+              {/* <span className="it-section-subtitle">Services</span> */}
               <h3 className="it-section-title">Our Services</h3>
             </div>
           </div>
