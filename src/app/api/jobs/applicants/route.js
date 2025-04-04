@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import dbConnect from "@/lib/db/connection";
 import { Applicant } from "@/models/Applicant";
-import { uploadToCloudinary } from "@/utils/upload"; // or wherever your method is
+import { uploadToCloudinary } from "@/utils/upload"; 
 
 export const config = {
   api: {
