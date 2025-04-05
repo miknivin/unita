@@ -6,13 +6,16 @@ export async function GET() {
   try {
     await dbConnect();
     const jobPosts = await JobPost.find().populate("company");
-  
 
-    return NextResponse.json({
+    const res = NextResponse.json({
       success: true,
       jobs: jobPosts,
       count: jobPosts.length,
     });
+
+    res.headers.set("Cache-Control", "no-store");
+
+    return res;
   } catch (error) {
     return NextResponse.json(
       {
