@@ -42,7 +42,7 @@ const OffCanvas = ({ isOffCanvasOpen, setIsOffCanvasOpen }: IProps) => {
           <div className="it-menu-mobile">
             <MenuItems isMobileMenu />
             <a
-              href="/assets/img/docs/BBH%20Profile%20(5).pdf"
+              href="/assets/img/docs/UNITAG.pdf"
               download
               className="it-btn-primary d-flex justify-content-center"
             >

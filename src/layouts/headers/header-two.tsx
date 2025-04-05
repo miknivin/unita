@@ -81,7 +81,7 @@ const HeaderTwo = ({ headerLogo }: HeaderProps) => {
                   <div className="it-header-bottom-right d-flex align-items-center justify-content-end">
                     <div className="it-header-bottom-right-button ml-30">
                       <a
-                        href="/assets/img/docs/BBH%20Profile%20(5).pdf"
+                        href="/assets/img/docs/UNITAG.pdf"
                         download
                         className="it-btn-primary"
                       >
