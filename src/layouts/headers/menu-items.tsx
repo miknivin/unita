@@ -90,7 +90,7 @@ const MenuItems = ({ isMobileMenu }: IProps) => {
         <Link href="/about">About</Link>
       </li>
       <li className="has-dropdown">
-        <Link href="/tour" onClick={handleClick}>
+        <Link href="#" onClick={handleClick}>
           Services
           <button
             className={`${
