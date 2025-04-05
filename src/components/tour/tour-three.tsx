@@ -8,12 +8,11 @@ async function getJobs(): Promise<JobPost[]> {
     // Determine base URL without relying on next/headers
     const baseUrl =
       process.env.NODE_ENV === "development"
-        ? "http://localhost:3001" // Default for development
-        : process.env.NEXT_PUBLIC_BASE_URL ||
-          "https://unita-agency.netlify.app"; // Set this in .env
+        ? "https://unita-admin.vercel.app" // Default for development
+        : process.env.NEXT_PUBLIC_BASE_URL || "https://unita-admin.vercel.app"; // Set this in .env
 
     // Use axios with custom headers to prevent caching
-    const response = await axios.get(`${baseUrl}/api/jobs`, {
+    const response = await axios.get(`${baseUrl}/api/job`, {
       headers: {
         "Cache-Control": "no-cache, no-store, must-revalidate",
         Pragma: "no-cache",
@@ -63,9 +62,11 @@ export default async function JobThree() {
         </div>
         <div className="row justify-content-center">
           <div className="it-featured-action text-center">
-            <Link href="/jobs" className="it-btn-secondary">
-              View All Jobs
-            </Link>
+            {jobs.length > 0 && (
+              <Link href="/jobs" className="it-btn-secondary">
+                View All Jobs
+              </Link>
+            )}
           </div>
         </div>
       </div>

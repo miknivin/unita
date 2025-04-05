@@ -16,8 +16,10 @@ const EventGridArea = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await axios.get<{ jobs: JobPost[] }>("/api/jobs");
-        setEvents(response.data.jobs);
+        const response = await axios.get(
+          "https://unita-admin.vercel.app/api/job"
+        );
+        setEvents(response.data.jobs || response.data?.data);
       } catch (error) {
         console.error("Error fetching jobs:", error);
       } finally {
