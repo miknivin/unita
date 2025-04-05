@@ -1,32 +1,38 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import axios from "axios";
 import { JobPost } from "@/types/job-d-t";
 import JobItemThree from "./tour-item/tour-item-three";
+import axios from "axios";
+import { headers } from "next/headers";
 
-export default function JobThree() {
-  const [jobs, setJobs] = useState<JobPost[]>([]);
-  const [loading, setLoading] = useState(true);
+async function getJobs(): Promise<JobPost[]> {
+  try {
+    // Create absolute URL for same-server API
+    const headersList = headers();
+    const host = headersList.get("host") || "localhost:3000";
+    const protocol = process.env.NODE_ENV === "development" ? "http" : "https";
+    const baseUrl = `${protocol}://${host}`;
 
-  useEffect(() => {
-    const fetchJobs = async () => {
-      try {
-        const response = await axios.get("/api/jobs");
-        setJobs(response.data.jobs || response.data || []);
-      } catch (error) {
-        console.error("Error fetching jobs:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+    // Use axios with custom headers to prevent caching
+    const response = await axios.get(`${baseUrl}/api/jobs`, {
+      headers: {
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+        Pragma: "no-cache",
+        Expires: "0",
+      },
+    });
 
-    fetchJobs();
-  }, []);
+    return response.data.jobs || response.data || [];
+  } catch (error) {
+    console.error("Error fetching jobs:", error);
+    return [];
+  }
+}
+
+export default async function JobThree() {
+  const jobs = await getJobs();
 
   return (
-    <div className="it-featured-area it-featured-style-2 it-featured-style-3  pb-120 p-relative">
+    <div className="it-featured-area it-featured-style-2 it-featured-style-3 pb-120 p-relative">
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-xl-8">
@@ -37,11 +43,7 @@ export default function JobThree() {
         </div>
         <div className="it-featured-item-wrap it-featured-style-3-space mb-30">
           <div className="row">
-            {loading ? (
-              <div className="col-12 text-center">
-                <p className="text-center">Loading jobs...</p>
-              </div>
-            ) : jobs.length > 0 ? (
+            {jobs.length > 0 ? (
               jobs.map((job: JobPost) => (
                 <div
                   key={job._id}
