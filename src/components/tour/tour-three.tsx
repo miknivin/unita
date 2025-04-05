@@ -2,15 +2,15 @@ import Link from "next/link";
 import { JobPost } from "@/types/job-d-t";
 import JobItemThree from "./tour-item/tour-item-three";
 import axios from "axios";
-import { headers } from "next/headers";
 
 async function getJobs(): Promise<JobPost[]> {
   try {
-    // Create absolute URL for same-server API
-    const headersList = headers();
-    const host = headersList.get("host") || "localhost:3000";
-    const protocol = process.env.NODE_ENV === "development" ? "http" : "https";
-    const baseUrl = `${protocol}://${host}`;
+    // Determine base URL without relying on next/headers
+    const baseUrl =
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:3001" // Default for development
+        : process.env.NEXT_PUBLIC_BASE_URL ||
+          "https://unita-agency.netlify.app"; // Set this in .env
 
     // Use axios with custom headers to prevent caching
     const response = await axios.get(`${baseUrl}/api/jobs`, {
