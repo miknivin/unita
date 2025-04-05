@@ -9,13 +9,7 @@ async function getJobs(): Promise<JobPost[]> {
   try {
     const baseUrl =
       process.env.NEXT_PUBLIC_BASE_URL || "https://unita-admin.vercel.app";
-    const response = await axios.get(`${baseUrl}/api/job`, {
-      headers: {
-        "Cache-Control": "no-cache, no-store, must-revalidate",
-        Pragma: "no-cache",
-        Expires: "0",
-      },
-    });
+    const response = await axios.get(`${baseUrl}/api/job?t=${Date.now()}`, {});
     return response.data.jobs || response.data.data || [];
   } catch (error) {
     console.error("Error fetching jobs:", error);
