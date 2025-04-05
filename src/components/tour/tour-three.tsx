@@ -6,10 +6,7 @@ import axios from "axios";
 async function getJobs(): Promise<JobPost[]> {
   try {
     // Determine base URL without relying on next/headers
-    const baseUrl =
-      process.env.NODE_ENV === "development"
-        ? "https://unita-admin.vercel.app" // Default for development
-        : process.env.NEXT_PUBLIC_BASE_URL || "https://unita-admin.vercel.app"; // Set this in .env
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://unita-admin.vercel.app"; // Set this in .env
 
     // Use axios with custom headers to prevent caching
     const response = await axios.get(`${baseUrl}/api/job`, {
