@@ -1,18 +1,14 @@
+"use client";
 import Link from "next/link";
 import { JobPost } from "@/types/job-d-t";
 import JobItemThree from "./tour-item/tour-item-three";
 import axios from "axios";
-
-// Force dynamic rendering for this page/component
-export const dynamic = "force-dynamic"; // Ensures no static generation
+import { useState, useEffect } from "react";
 
 async function getJobs(): Promise<JobPost[]> {
   try {
-    // Use environment variable for base URL
     const baseUrl =
       process.env.NEXT_PUBLIC_BASE_URL || "https://unita-admin.vercel.app";
-
-    // Fetch jobs with no caching
     const response = await axios.get(`${baseUrl}/api/job`, {
       headers: {
         "Cache-Control": "no-cache, no-store, must-revalidate",
@@ -20,7 +16,6 @@ async function getJobs(): Promise<JobPost[]> {
         Expires: "0",
       },
     });
-
     return response.data.jobs || response.data.data || [];
   } catch (error) {
     console.error("Error fetching jobs:", error);
@@ -28,8 +23,21 @@ async function getJobs(): Promise<JobPost[]> {
   }
 }
 
-export default async function JobThree() {
-  const jobs = await getJobs();
+export default function JobThree() {
+  const [jobs, setJobs] = useState<JobPost[]>([]);
+
+  useEffect(() => {
+    // Fetch jobs immediately and on every render
+    async function fetchJobs() {
+      const data = await getJobs();
+      setJobs(data);
+    }
+    fetchJobs();
+
+    // Optional: Poll the API every X seconds (e.g., 10 seconds)
+    const interval = setInterval(fetchJobs, 10000); // Adjust interval as needed
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []); // Empty dependency array means it runs on mount; remove it to run on every render
 
   return (
     <div className="it-featured-area it-featured-style-2 it-featured-style-3 pb-120 p-relative">
