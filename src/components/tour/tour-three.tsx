@@ -3,12 +3,16 @@ import { JobPost } from "@/types/job-d-t";
 import JobItemThree from "./tour-item/tour-item-three";
 import axios from "axios";
 
+// Force dynamic rendering for this page/component
+export const dynamic = "force-dynamic"; // Ensures no static generation
+
 async function getJobs(): Promise<JobPost[]> {
   try {
-    // Determine base URL without relying on next/headers
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://unita-admin.vercel.app"; // Set this in .env
+    // Use environment variable for base URL
+    const baseUrl =
+      process.env.NEXT_PUBLIC_BASE_URL || "https://unita-admin.vercel.app";
 
-    // Use axios with custom headers to prevent caching
+    // Fetch jobs with no caching
     const response = await axios.get(`${baseUrl}/api/job`, {
       headers: {
         "Cache-Control": "no-cache, no-store, must-revalidate",
@@ -17,7 +21,7 @@ async function getJobs(): Promise<JobPost[]> {
       },
     });
 
-    return response.data.jobs || response.data || [];
+    return response.data.jobs || response.data.data || [];
   } catch (error) {
     console.error("Error fetching jobs:", error);
     return [];
