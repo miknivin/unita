@@ -19,7 +19,7 @@ const EventGridArea = () => {
         const response = await axios.get(
           "https://unita-admin.vercel.app/api/job"
         );
-        setEvents(response.data.jobs || response.data?.data);
+        setEvents(response.data.jobs || response.data?.data || []);
       } catch (error) {
         console.error("Error fetching jobs:", error);
       } finally {
@@ -52,65 +52,80 @@ const EventGridArea = () => {
     <div className="it-events-area it-events-style-2 pt-120 pb-120">
       <div className="container">
         <div className="row">
-          {currentEvents.map((event) => (
-            <div key={event._id} className="col-xl-4 col-lg-4 col-md-6">
-              <Link
-                href={`/job-details/${event._id}`}
-                className="it-events-item "
-              >
-                <div className="it-events-date-box d-flex align-items-center  justify-content-center">
-                  <span className="it-events-date ">
-                    {event.company?.name || "Unknown Company"}
-                  </span>
-                </div>
-                {/* <div className="it-events-thumb fix">
-                  <Image
-                    src={"/default-job-image.jpg"} // Placeholder image
-                    alt={event.jobTitle}
-                    width={370}
-                    height={212}
-                    style={{ height: "auto" }}
-                  />
-                </div> */}
-                <div className="it-events-content border-top-0 border  rounded-bottom-3 border-1 border-black">
-                  <div className="it-events-meta mb-10 d-flex align-items-center">
-                    <div className="it-events-meta-icon mr-5">
-                      <i className="fa-solid fa-location-dot"></i>
-                    </div>
-                    <span className="it-events-meta-text">
-                      {event.jobLocation}
+          {currentEvents.length === 0 ? (
+            <div className="col-12 text-center my-5">
+              <h4>No job postings available at the moment.</h4>
+            </div>
+          ) : (
+            currentEvents.map((event) => (
+              <div key={event._id} className="col-xl-4 col-lg-4 col-md-6">
+                <Link
+                  href={`/job-details/${event._id}`}
+                  className="it-events-item"
+                >
+                  <div className="it-events-date-box d-flex align-items-center justify-content-center">
+                    <span className="it-events-date">
+                      {event.company?.name || "Unknown Company"}
                     </span>
                   </div>
-                  <h3 className="it-events-title">
-                    <button>{event.jobTitle}</button>
-                  </h3>
-                  <span className="bg-success-subtle px-3 py-1  border rounded-3 mb-3">
-                    ${event.salaryRange?.min}-${event.salaryRange?.max}
-                  </span>
-                  <p className="job-description mt-3">{event.jobDescription}</p>
-                </div>
-              </Link>
-            </div>
-          ))}
+                  {/* Uncomment and replace image if available */}
+                  {/* <div className="it-events-thumb fix">
+                    <Image
+                      src={"/default-job-image.jpg"}
+                      alt={event.jobTitle}
+                      width={370}
+                      height={212}
+                      style={{ height: "auto" }}
+                    />
+                  </div> */}
+                  <div className="it-events-content border-top-0 border rounded-bottom-3 border-1 border-black">
+                    <div className="it-events-meta mb-10 d-flex align-items-center">
+                      <div className="it-events-meta-icon mr-5">
+                        <i className="fa-solid fa-location-dot"></i>
+                      </div>
+                      <span className="it-events-meta-text">
+                        {event.jobLocation}
+                      </span>
+                    </div>
+                    <h3 className="it-events-title">
+                      <button>{event.jobTitle}</button>
+                    </h3>
+                    <span className="bg-success-subtle px-3 py-1 border rounded-3 mb-3 d-inline-block">
+                      ${event.salaryRange?.min}-{event.salaryRange?.max}
+                    </span>
+                    <p className="job-description mt-3">
+                      {event.jobDescription}
+                    </p>
+                  </div>
+                </Link>
+              </div>
+            ))
+          )}
         </div>
-        <div className="row">
-          <div className="col-xl-12">
-            <div className="it-pagination">
-              <ReactPaginate
-                previousLabel={<i className="fa-solid fa-arrow-left-long"></i>}
-                nextLabel={<i className="fa-solid fa-arrow-right-long"></i>}
-                breakLabel="..."
-                pageCount={pageCount}
-                marginPagesDisplayed={2}
-                pageRangeDisplayed={3}
-                onPageChange={handlePageClick}
-                activeClassName="active"
-              />
+
+        {events.length > 0 && (
+          <div className="row">
+            <div className="col-xl-12">
+              <div className="it-pagination">
+                <ReactPaginate
+                  previousLabel={
+                    <i className="fa-solid fa-arrow-left-long"></i>
+                  }
+                  nextLabel={<i className="fa-solid fa-arrow-right-long"></i>}
+                  breakLabel="..."
+                  pageCount={pageCount}
+                  marginPagesDisplayed={2}
+                  pageRangeDisplayed={3}
+                  onPageChange={handlePageClick}
+                  activeClassName="active"
+                />
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
 };
+
 export default EventGridArea;
