@@ -6,10 +6,16 @@ export interface JobPost {
     website?: string;
   };
   jobTitle: string;
-  jobLocation: string;
+  jobLocation?: string;
   salaryRange?: {
-    min?: number;
-    max?: number;
+    aed?: {
+      min?: number;
+      max?: number;
+    };
+    usd?: {
+      min?: number;
+      max?: number;
+    };
   };
   jobDescription: string;
   keyResponsibilities: string[];

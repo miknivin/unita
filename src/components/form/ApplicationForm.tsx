@@ -79,7 +79,9 @@ const ApplicationForm = ({ jobId, onClose }: ApplicationFormProps) => {
       onClose();
       reset();
     } catch (err: any) {
-      setError(err.response?.data?.message || "Something went wrong.");
+      console.log(err, "err");
+
+      setError(err.response?.data?.error || "Something went wrong.");
     } finally {
       setLoading(false);
     }

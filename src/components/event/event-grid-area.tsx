@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Image from "next/image";
 import ReactPaginate from "react-paginate";
-import { JobPost } from "./../../types/job-d-t";
+import { JobPost } from "./../../types/job-d-t"; 
 import Link from "next/link";
 
 const EventGridArea = () => {
@@ -36,6 +36,29 @@ const EventGridArea = () => {
 
   const handlePageClick = (data: { selected: number }) => {
     setCurrentPage(data.selected);
+  };
+
+  // Helper function to format salary range
+  const formatSalaryRange = (salaryRange?: JobPost["salaryRange"]) => {
+    if (!salaryRange) return "Salary not specified";
+
+    const aedMin = salaryRange.aed?.min;
+    const aedMax = salaryRange.aed?.max;
+    const usdMin = salaryRange.usd?.min;
+    const usdMax = salaryRange.usd?.max;
+
+    // Prefer AED if available, fallback to USD
+    if (aedMin !== undefined && aedMax !== undefined) {
+      return `AED ${aedMin.toLocaleString()} - ${aedMax.toLocaleString()}`;
+    } else if (usdMin !== undefined && usdMax !== undefined) {
+      return `USD ${usdMin.toLocaleString()} - ${usdMax.toLocaleString()}`;
+    } else if (aedMin !== undefined) {
+      return `AED ${aedMin.toLocaleString()} (min)`;
+    } else if (usdMin !== undefined) {
+      return `USD ${usdMin.toLocaleString()} (min)`;
+    } else {
+      return "Salary range incomplete";
+    }
   };
 
   if (loading) {
@@ -84,14 +107,14 @@ const EventGridArea = () => {
                         <i className="fa-solid fa-location-dot"></i>
                       </div>
                       <span className="it-events-meta-text">
-                        {event.jobLocation}
+                        {event.jobLocation || "Location not specified"}
                       </span>
                     </div>
                     <h3 className="it-events-title">
                       <button>{event.jobTitle}</button>
                     </h3>
                     <span className="bg-success-subtle px-3 py-1 border rounded-3 mb-3 d-inline-block">
-                      ${event.salaryRange?.min}-{event.salaryRange?.max}
+                      {formatSalaryRange(event.salaryRange)}
                     </span>
                     <p className="job-description mt-3">
                       {event.jobDescription}

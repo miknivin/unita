@@ -1,7 +1,6 @@
 import { RightArrow } from "@/components/svg";
-import { JobPost } from "@/types/job-d-t";
+import { JobPost } from "@/types/job-d-t"; // Ensure this points to the updated interface
 import { useState } from "react";
-import ApplicationForm from "../../modals/ApplicationModal";
 import ApplicationModal from "../../modals/ApplicationModal";
 import Link from "next/link";
 
@@ -10,8 +9,42 @@ interface IProps {
 }
 
 const EventDetailsArea = ({ event }: IProps) => {
-  console.log(event);
+  //console.log(event);
   const [showModal, setShowModal] = useState(false);
+
+  const formatSalaryRange = (
+    salaryRange?: JobPost["salaryRange"]
+  ): string[] => {
+    if (!salaryRange) return ["Not Specified"];
+
+    const aedMin = salaryRange.aed?.min;
+    const aedMax = salaryRange.aed?.max;
+    const usdMin = salaryRange.usd?.min;
+    const usdMax = salaryRange.usd?.max;
+
+    let result: string[] = [];
+
+    if (aedMin !== undefined && aedMax !== undefined) {
+      result.push(
+        `AED ${aedMin.toLocaleString()} - ${aedMax.toLocaleString()}`
+      );
+    } else if (aedMin !== undefined) {
+      result.push(`AED ${aedMin.toLocaleString()} (min)`);
+    }
+
+    if (usdMin !== undefined && usdMax !== undefined) {
+      result.push(
+        `USD ${usdMin.toLocaleString()} - ${usdMax.toLocaleString()}`
+      );
+    } else if (usdMin !== undefined) {
+      result.push(`USD ${usdMin.toLocaleString()} (min)`);
+    }
+
+    return result.length > 0 ? result : ["NA"];
+  };
+
+  const salaryRanges = formatSalaryRange(event.salaryRange);
+
   return (
     <div className="it-events-details-area pt-120 pb-120">
       <div className="container">
@@ -60,7 +93,9 @@ const EventDetailsArea = ({ event }: IProps) => {
                           <h3 className="it-events-details-info-title">
                             Job Location
                           </h3>
-                          <span>{event.jobLocation}</span>
+                          <span>
+                            {event.jobLocation || "Location not specified"}
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -88,14 +123,19 @@ const EventDetailsArea = ({ event }: IProps) => {
                 <div className="it-events-details-link-content d-sm-flex align-items-center">
                   {/* Job Salary */}
                   <div className="it-events-details-lunch d-flex align-items-center">
-                    <div className="it-events-details-lunch-icon">
+                    {/* <div className="it-events-details-lunch-icon">
                       <i className="fa-light fa-dollar-sign"></i>
-                    </div>
-                    <span>
-                      Salary: $
-                      {event.salaryRange?.min
-                        ? `${event.salaryRange.min} - ${event.salaryRange.max}`
-                        : "Not Specified"}
+                    </div> */}
+                    <span className="d-flex flex-wrap gap-3 align-items-center">
+                      Salary:{" "}
+                      {salaryRanges.map((range, index) => (
+                        <span
+                          key={index}
+                          className="bg-success-subtle px-2 py-1 border rounded-3 mr-2 d-inline-block"
+                        >
+                          {range}
+                        </span>
+                      ))}
                     </span>
                   </div>
 
@@ -182,4 +222,5 @@ const EventDetailsArea = ({ event }: IProps) => {
     </div>
   );
 };
+
 export default EventDetailsArea;
